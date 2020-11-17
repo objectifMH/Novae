@@ -1,1 +1,71 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$novae-primary: mat-palette($mat-indigo);
+$novae-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$novae-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$novae-theme: mat-light-theme($novae-primary, $novae-accent, $novae-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($novae-theme);
+
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* Colors */ 
+$color_light: #40bcd6;
+$color_dark: #003e59;
+$color_black: #19212c;
+$color_text: white;
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: 'Open Sans', sans-serif !important;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.bg_linear_transparent {
+    background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
+    
+}
+
+.bg_linear {
+    background: linear-gradient(to bottom, $color_dark 18%, $color_light 100%);
+}
+
+.bg_linear_light {
+    background: linear-gradient(150deg,#289bc2, #279cc4);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+    
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Poppins", sans-serif; }

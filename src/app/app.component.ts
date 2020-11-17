@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { faTwitter, faLinkedinIn, faGithub} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'novae';
+  isShowMenu = false;
+  isRotateMenu = false;
+
+  faLinkedinIn = faLinkedinIn;
+  faTwitter = faTwitter;
+  faGithub = faGithub;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    let element = document.querySelector('header');
+    if (window.pageYOffset > element.clientHeight) {
+      element.classList.add('opacity_true');
+    } else {
+      element.classList.remove('opacity_true');
+    }
+  }
+
+  getShowMenu() {
+    this.isShowMenu = !this.isShowMenu;
+    this.isRotateMenu = !this.isRotateMenu;
+  }
 }

@@ -23,6 +23,7 @@ header {
     padding: 10px;
     position: fixed;
     width: 100%;
+    z-index: 1000;
 
 
     display: flex;
@@ -88,21 +89,17 @@ header {
     .nav_menu_mobile {
         top: 0;
         width: 100vw;
-        height: 100vh;
         right: 0;
         transition: 0.3s ease-in-out;
         position: absolute;
 
         .liste_menu {
-
-            //
             display: flex;
             align-items: flex-start;
             flex-direction: column;
             justify-content: space-around;
             list-style: none;
             padding: 0;
-            height: 60%;
             margin-top: 1px;
             width: 100%;
         
@@ -120,7 +117,7 @@ header {
                     font-size: 1.2em;
                     font-weight: bold;
                     color: white;
-                    padding: 20px 30px;
+                    padding: 25px 30px;
                 }
 
                 transition: 0.3s ease-in-out;  
@@ -129,9 +126,7 @@ header {
                     transform: scale(1.05);
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
                 }
-    
             }
-            //
         }
 
         .connecter {
@@ -166,7 +161,6 @@ header {
                 }
             }
         }
-    
     }
 
     .nav_menu_mobile.fade {
@@ -189,7 +183,6 @@ header {
 main {
     //background-color: pink;
     min-height: 100vh;
-
 
     // DEBUT
     .debut {
@@ -230,12 +223,9 @@ main {
                 &:hover {
                     transform: translateY(-5px);
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
-
                 }
             }
-
         }
-
     }
     // FIN DEBUT 
 
@@ -475,17 +465,18 @@ footer {
                 flex-direction: row;
                 align-items: end;
                 color: $color_light;
-
-                fa-icon {
-                    font-size: 2em;
-                    color: $color-text;
-                    font-size: 1.4em;
-                    padding: 5px;
-                }
-
+                border: 2px solid $color-text;
+                padding: 6px 8px;
                 a {
+                    fa-icon {
+                        font-size: 1.6em;
+                        padding: 6px 2px;
+                    }
+
+                    color: orange;
                     transition: .4s ease-in-out;
                     &:hover {
+                        color: orange;
                         transform: scale(1.2);
                     }
                 }
@@ -670,7 +661,7 @@ footer {
                         box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
 
                     }
-            }
+                }
             }
 
             .menu {

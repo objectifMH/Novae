@@ -3,15 +3,61 @@
   <div class="logo">
     NO<span>V</span>AE
   </div>
+  <div class="centre">
+    <ul class="liste_menu">
+      <li>
+        <a [routerLink]="['/']" fragment="accueil">ACCUEIL</a>  
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="missions">NOS MISSIONS</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="cabinet">NOTRE CABINET</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="solution">NOS SOLUTIONS</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="contacter">NOUS CONTACTER</a>
+      </li>
+    </ul>
 
-  <div class="menu">
-    <span class="material-icons icon_menu"
-      [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
-      (click)="getShowMenu()">
-
-    </span>
   </div>
+  <div class="droite">
+    <div class="connecter">
+      <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
+    </div>
+    <div class="menu" >
+      <span class="material-icons icon_menu"
+        [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
+        (click)="getShowMenu()">
+  
+      </span>
+    </div>
+  </div>
+  <div class="nav_menu_mobile fade bg_linear" [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
+    <ul class="liste_menu container ">
+      <li>
+        <a [routerLink]="['/']" fragment="accueil">ACCUEIL</a>  
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="missions">NOS MISSIONS</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="cabinet">NOTRE CABINET</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="solution">NOS SOLUTIONS</a>
+      </li>
+      <li>
+        <a [routerLink]="['/']" fragment="contacter">NOUS CONTACTER</a>
+      </li>
+    </ul>
+    <div class="connecter">
+      <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
+    </div>
 
+  </div>
 </header>
 
 <!-- fin header  -->

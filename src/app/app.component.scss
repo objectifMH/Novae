@@ -36,7 +36,13 @@ header {
             
         color: $color_text;
         font-weight: bold;
-        text-shadow: rgba(0,0,0,.75) 2px 2px;  
+        text-shadow: rgba(0,0,0,.75) 2px 2px; 
+        letter-spacing: 1px; 
+        // Pour l'animation : 
+        transform: translateX(-100em);
+        animation: slideIn .6s forwards;
+        animation-delay: 0.5s;
+
         span {
             color: $color_light;
         }
@@ -86,12 +92,15 @@ header {
         }
     }
     // FIN Menu nav
+
+    // Menu mobile
     .nav_menu_mobile {
         top: 0;
         width: 100vw;
         right: 0;
         transition: 0.3s ease-in-out;
         position: absolute;
+        background: $color_dark ;
 
         .liste_menu {
             display: flex;
@@ -110,22 +119,47 @@ header {
                 align-items: center;
                 cursor: pointer;
                 transition: 0.3s ease-in-out;
+                transform: translateY(100em);
+                animation: slideDown .5s forwards;
+
                 a{  
                     font-size: 1.2em;
                     font-weight: bold;
                     color: $color-text;
-                    font-size: 1.2em;
+                    font-size: 1em;
                     font-weight: bold;
                     color: white;
                     padding: 25px 30px;
+                    letter-spacing: 1px;
                 }
 
-                transition: 0.3s ease-in-out;  
                 &:hover {
                     background: linear-gradient(150deg, rgba(0, 0, 0, 0.14), #279cc4);
                     transform: scale(1.05);
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
                 }
+
+                &:nth-child(1) {
+                    animation-delay: 4s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 4.5s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 5s;
+                }
+
+                &:nth-child(4) {
+                    animation-delay: 5.5s;
+                }
+
+                &:nth-child(5) {
+                    animation-delay: 6s;
+                }
+
+
             }
         }
 
@@ -135,6 +169,9 @@ header {
             justify-content: center;
             align-items: center;
             position: relative;
+            transform: translateX(-100em);
+            animation: slideIn .5s forwards;
+            animation-delay: 6.5s;
 
             a {
                 color: $color-text;
@@ -164,17 +201,15 @@ header {
     }
 
     .nav_menu_mobile.fade {
-        top: -100%;
-        z-index: -1000 !important;
+        transform: translateY(-100em);
+        
      }
 
      .nav_menu_mobile.show {
         height: 100vh;
         margin-top: 60px;
+        transform: translateY(0);
      }
-    // Menu mobile
-
-
     // FIN Menu mobile
 }
 // FIN HEADER 
@@ -516,7 +551,7 @@ footer {
 
 }
 
-
+// MEDIA QUERIES 
 @media screen and (min-width: 768px) {
 
 
@@ -617,19 +652,51 @@ footer {
                 margin: auto;
         
                 li {
+                    
                     a{  
                         font-size: 1em;
                         font-weight: bold;
                         color: $color-text;
-                        // border-bottom: 0px solid $color-text;
+                        letter-spacing: 1px;
+                        position: relative;
+
+                        &::after {
+                            content:'';
+                            transition: 0.2s ease-in-out;
+                            width: 100%;
+                            background: $color-text;
+                            position: absolute;
+                            height: 3px;
+                            transform: scaleX(0);
+                            bottom: -8px;
+                            left: 0;
+                        }
+
+                        &:hover::after {
+                            transform: scaleX(1);
+                        }
                         
                     }
 
-                    transition: 0.3s ease-in-out;  
-                    &:hover {
-                        border-bottom: 3px solid $color-text;
-                        //transform: scale(1.1);
+                    transform: translateX(100em);
+                    animation: slideIn .5s forwards;
+  
+                    &:nth-child(1) {
+                        animation-delay: 0s;
                     }
+                    &:nth-child(2) {
+                        animation-delay: 0.5s;
+                    }
+                    &:nth-child(3) {
+                        animation-delay: 1s;
+                    }
+                    &:nth-child(4) {
+                        animation-delay: 1.5s;
+                    }
+                    &:nth-child(5) {
+                        animation-delay: 2s;
+                    }
+                    
         
                 }
             }
@@ -638,6 +705,9 @@ footer {
         .droite {
             .connecter {
                 display: block;
+                transform: translateX(200em);
+                animation: slideIn .5s forwards;
+                animation-delay: 3s;
                 a {
                     color: $color-text;
                     border-width: 0px;
@@ -672,6 +742,9 @@ footer {
 
 
     main {
+        .debut {
+            background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../assets/back.jpg);
+        }
         
         // MISSIONS
         .missions {
@@ -685,9 +758,44 @@ footer {
             }
         }
         // FIN MISSIONS
+
+        // CHIFFRES
+        .chiffres {
+            background-image: linear-gradient(-360deg, #289bc22b,  $color_dark), url(../assets/chiffres.jpg);
+        }
+
+        // FIN CHIFFRES
     }
 }
 
 @media screen and (min-width: 1024px) {
 
 }
+
+// FIN MEDIA QUERIES 
+
+
+// ANIMATION 
+
+@keyframes slideIn {
+    from {
+
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+//FIN ANIMATION
+
+
+

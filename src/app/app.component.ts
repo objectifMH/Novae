@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { faTwitter, faLinkedinIn, faGithub} from '@fortawesome/free-brands-svg-icons';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,10 @@ export class AppComponent {
   faLinkedinIn = faLinkedinIn;
   faTwitter = faTwitter;
   faGithub = faGithub;
+
+  ngOnInit() {
+    AOS.init();
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {

@@ -454,7 +454,7 @@ main {
                     padding: 5px;
                     width: 96%;
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-                     content:url(../assets/reunion.jpg) ;
+                     content:url(../assets/1.jpg) ;
 
                 }
             }
@@ -587,12 +587,12 @@ main {
 
         .reunion {
            content:url(../assets/reunion_l.jpg) ;
-            border: 3px solid red;
+            border: 3px solid purple;
         }
 
         .back {
             border: 3px solid $color_dark;
-            content:url(../assets/back.jpg) ;
+            content:url(../assets/2.jpg) ;
         }
     }
 }

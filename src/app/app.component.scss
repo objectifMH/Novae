@@ -449,11 +449,13 @@ main {
                 width: 70%;
                 margin: auto;
 
-                img {
+                .reunion_img {
                     transform: rotate(3deg);
                     padding: 5px;
                     width: 96%;
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+                     content:url(../assets/reunion.jpg) ;
+
                 }
             }
         }
@@ -582,9 +584,18 @@ main {
             box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.55);
 
         }
+
+        .reunion {
+           content:url(../assets/reunion.jpg) ;
+        }
+
+        .back {
+            border: 3px solid $color_dark;
+            content:url(../assets/back.jpg) ;
+        }
     }
 }
-// FIN MAIN
+// FIN MAINs
 
 // FOOTER
 

@@ -455,7 +455,6 @@ main {
                     width: 96%;
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
                      content:url(../assets/1.jpg) ;
-
                 }
             }
         }
@@ -1022,10 +1021,12 @@ footer {
                     width: 90%;
                     margin: auto;
 
-                    img {
+                    .reunion_img {
                         padding: 5px;
                         width: 110%;
                         box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+                        content:url(../assets/reunion.jpg) ;
+                        transform: rotate(3deg);
                     }
                 }
             }

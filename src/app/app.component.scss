@@ -429,6 +429,7 @@ main {
                     font-size: 1.6em;
                     font-weight: 600;
                     color: $color_light;
+                    text-transform: uppercase;
                 }
 
                 P {
@@ -443,10 +444,15 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-color: rgba(0, 0, 0, 0.14);
+                            
+                width: 70%;
+                margin: auto;
 
                 img {
+                    transform: rotate(3deg);
                     padding: 5px;
-                    width: 100%;
+                    width: 96%;
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
                 }
             }
@@ -538,6 +544,7 @@ main {
                         font-size: 1.6em;
                         font-weight: 600;
                         color: $color_light;
+                        text-transform: uppercase;
                     }
     
                     P {
@@ -560,9 +567,22 @@ main {
                 }
             }
     }
-    
-
     // FIN SOLUTIONS
+
+    .test_img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 50px;
+
+        img {
+            margin: 5px ;
+            max-width: 230px;
+            box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.55);
+
+        }
+    }
 }
 // FIN MAIN
 
@@ -984,8 +1004,11 @@ footer {
                 .cabinet_img {
                     flex: 1;
                     display: flex;
-                    justify-content: center;
+                    justify-content: flex-end;
                     align-items: center;
+                    background-color: rgba(0, 0, 0, 0.14);
+                    width: 90%;
+                    margin: auto;
 
                     img {
                         padding: 5px;

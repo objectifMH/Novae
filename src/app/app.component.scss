@@ -468,7 +468,7 @@ main {
             height: 100%;
 
             h4 {
-                font-size: 2em;
+                font-size: 1.4em;
                 color: $color-text;
             }
 
@@ -501,7 +501,7 @@ main {
 
     // SOLUTIONS 
     .solutions {
-        padding: 60px 0 60px 0;
+        padding: 40px 0 60px 0;
             .titre_container {
                 padding: 20px 0;
                 h2 {
@@ -525,8 +525,40 @@ main {
                     line-height: 1.1em;
                 }
             }
-        
 
+            .solutions_container {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+    
+                .solution_text {
+                    flex: 2;
+                    padding: 30px 40px 30px 30px;
+                    h4 {
+                        font-size: 1.6em;
+                        font-weight: 600;
+                        color: $color_light;
+                    }
+    
+                    P {
+                        font-size: 1.4em;
+                        font-weight: 500;
+                        color:grey;
+                    }
+                }
+    
+                .solution_img {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    img {
+                        padding: 5px;
+                        max-width: 100%;
+                    }
+                }
+            }
     }
     
 
@@ -656,8 +688,15 @@ footer {
 // CONTACTEZ
 .contactez {
     height: 200px;
+    transform: translateY(100px); 
 }
 // FIN CONTACTEZ
+
+// SOLUTIONS 
+.solutions {
+    padding: 140px 0 60px 0 !important;
+}
+// FIN SOLUTIONS
 
 
 // FOOTER
@@ -747,6 +786,42 @@ footer {
         }
         // FIN CHIFFRES
 
+        // CONTACTEZ
+        .contactez {
+            .contactez_container {
+                flex-direction: row;
+
+                h4 {
+                    font-size: 2em;
+                }
+
+                button {
+                    margin: 0 0 0 30px;
+                }
+            }
+        }
+        
+
+        // FIN CONTACTEZ
+
+        // SOLUTIONS 
+        // .solutions {
+        //     .titre {
+        //         padding-top: 130px;
+        //     }
+
+        //     .solutions_container.meg {
+        //         .solution_img {
+        //             order: 2;
+        //         }
+
+        //         .solutions_container {
+        //             order: 1;
+        //         }
+        //     }
+        // }
+
+        // FIN SOLUTIONS
         
 
     }
@@ -846,7 +921,6 @@ footer {
                     &:hover {
                         transform: translateY(-5px);
                         box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
-
                     }
                 }
             }
@@ -924,10 +998,58 @@ footer {
         // FIN CABINET
 
         // CONTACTEZ
-        .contactez {
-
-        }
+        
         // FIN CONTACTEZ
+
+        // SOLUTIONS
+        .solutions {
+            .solutions_container {
+                display: flex;
+                flex-direction: row;
+                flex: 1;
+
+                .solution_text {
+                    flex: 2;
+                    padding: 30px 40px 30px 40px;
+                    h4 {
+                        font-size: 1.6em;
+                        font-weight: 600;
+                        color: $color_light;
+                        margin-top: 30px;
+                    }
+
+                    P {
+                        font-size: 1.4em;
+                        font-weight: 500;
+                        color:grey;
+                        width: 85%;
+                    }
+                }
+
+                .solution_img {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        padding: 5px;
+                        min-width: 200px;
+                    }
+                }
+            }
+
+            .solutions_container.meg {
+                .solution_img {
+                    order: 2;
+                }
+
+                .solutions_container {
+                    order: 1;
+                }
+            }
+        }
+        // FIN SOLUTIONS
     }
 }
 

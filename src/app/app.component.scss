@@ -240,6 +240,16 @@ main {
                 color: #003e59 !important;
                 letter-spacing: 1.5px;
                 line-height: 1.1em;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 18%;
+                    border: 2px solid $color_dark;
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                }
             }
         }
     }

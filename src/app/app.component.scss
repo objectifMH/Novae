@@ -545,10 +545,11 @@ main {
                     }
     
                     P {
-                        font-size: 1.4em;
-                        font-weight: 500;
-                        color:grey;
-                        text-align: justify;
+                        font-size: 1em;
+                        color: grey;
+                        margin-top: -20px;
+                        text-transform: uppercase;
+                        font-family: "Muli",sans-serif;
                     }
                 }
     
@@ -1087,10 +1088,10 @@ footer {
                     }
 
                     P {
-                        font-size: 1.4em;
-                        font-weight: 500;
-                        color:grey;
-                        width: 85%;
+                        // font-size: 1.4em;
+                        // font-weight: 500;
+                        // color:grey;
+                        // width: 85%;
                     }
                 }
 

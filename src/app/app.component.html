@@ -6,19 +6,19 @@
   <div class="centre">
     <ul class="liste_menu">
       <li>
-        <a [routerLink]="['/']" fragment="accueil" data-aos="zoom-in-up" data-aos-duration="7000">ACCUEIL</a>  
+        <a [routerLink]="['/']" fragment="missions" >NOS MISSIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="missions" data-aos="zoom-in-up" data-aos-duration="1500">NOS MISSIONS</a>
+        <a [routerLink]="['/']" fragment="cabinet" >NOTRE CABINET</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="cabinet" data-aos="zoom-in-up" data-aos-duration="2500">NOTRE CABINET</a>
+        <a [routerLink]="['/']" fragment="solution" >NOS SOLUTIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="solution" data-aos="zoom-in-up" data-aos-duration="3200">NOS SOLUTIONS</a>
+        <a [routerLink]="['/']" fragment="actus" >NOS ACTUS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="contacter" data-aos="zoom-in-up" data-aos-duration="3000">NOUS CONTACTER</a>
+        <a [routerLink]="['/']" fragment="contacter" >NOUS CONTACTER</a>
       </li>
     </ul>
 
@@ -38,19 +38,19 @@
   <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
     <ul class="liste_menu container ">
       <li>
-        <a [routerLink]="['/']" fragment="accueil" data-aos="zoom-in-up" data-aos-duration="7000">ACCUEIL</a>  
+        <a [routerLink]="['/']" fragment="missions" >NOS MISSIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="missions" data-aos="zoom-in-up" data-aos-duration="1500">NOS MISSIONS</a>
+        <a [routerLink]="['/']" fragment="cabinet" >NOTRE CABINET</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="cabinet" data-aos="zoom-in-up" data-aos-duration="2500">NOTRE CABINET</a>
+        <a [routerLink]="['/']" fragment="solution" >NOS SOLUTIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="solution" data-aos="zoom-in-up" data-aos-duration="3200">NOS SOLUTIONS</a>
+        <a [routerLink]="['/']" fragment="actus" >NOS ACTUS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="contacter" data-aos="zoom-in-up" data-aos-duration="3000">NOUS CONTACTER</a>
+        <a [routerLink]="['/']" fragment="contacter" >NOUS CONTACTER</a>
       </li>
     </ul>
     <div class="connecter">
@@ -79,11 +79,11 @@
   <!-- fin debut  -->
 
   <!-- missions  -->
-  <div class="missions container-fluid bg_linear_transparent">
+  <div class="missions container-fluid bg_linear_transparent" id="missions">
     <div class="titre container">
-      <div class="titre_container">
+      <div class="titre_container" >
         <h2>Nos Missions</h2>
-        <h3>Notre expertise à votre service</h3>
+        <h3 >Notre expertise à votre service</h3>
       </div>
     </div>
     <div class="missions_container container">
@@ -188,7 +188,7 @@
   <!-- fin chiffres  -->
 
   <!-- cabinet  -->
-  <div class="cabinet">
+  <div class="cabinet " id="cabinet">
     <div class="titre container">
       <div class="titre_container">
         <h2>Notre Cabinet</h2>
@@ -214,7 +214,7 @@
   <!-- fin cabinet  -->
 
   <!-- contactez-nous  -->
-  <div class="container contactez">
+  <div class="container contactez" >
     <div class="contactez_container">
       <h4>
         Vous avez des&nbsp;questions sur votre fiscalité ? Contactez-nous !
@@ -223,12 +223,11 @@
         Rejoignez-nous
       </button>
     </div>
-  </div>
+  </div>  
   <!-- fin contactez-nous  -->
 
   <!-- solutions  -->
-
-  <div class="solutions bg_linear_transparent container-fluid">
+  <div class="solutions bg_linear_transparent container-fluid" id="solution">
     <div class="titre container ">
       <div class="titre_container">
         <h2>Nos solutions</h2>
@@ -261,29 +260,79 @@
       </div>
     </div>
   </div>
-
   <!-- fin solutions  -->
+
+  <!-- actus  -->
+  <div class="actus  container-fluid" id="actus">
+    <div class="titre container ">
+      <div class="titre_container">
+        <h2>Nos actus</h2>
+        <h3>Nos actualités pour vous tenir informé</h3>
+      </div>
+    </div>
+    <div class="actus_container container"> 
+      <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
+        <img src="assets/back_7.jpg" />
+      </div>
+      <div class="actu_text">
+        <h4>COVID-19 : LE FONDS DE SOLIDARITÉ MAINTENU JUSQU’AU 31 DÉCEMBRE 2020</h4>
+      </div>
+    </div>
+    <div class="actus_container container"> 
+      <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
+        <img src="assets/chiffres.jpg" />
+      </div>
+      <div class="actu_text">
+        <h4>ENTREPRISES EN DIFFICULTÉ : UN NUMÉRO SPÉCIAL D’INFORMATION SUR LES MESURES D’URGENCES</h4>
+      </div>
+    </div>
+    <div class="actus_container container"> 
+      <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
+        <img src="assets/chiffres_1.jpg" />
+      </div>
+      <div class="actu_text">
+        <h4>PGE : prolongé jusqu’au 30 juin 2021</h4>
+      </div>
+    </div>
+  </div>
+  <!-- fin actus  -->
+
+
+
 
   <div class="container test_img">
     
-    <img src="" class="reunion "/>
-    
-    <img  class="back" />
-    
-    <img src="assets/back_7.jpg" />
+    <div class="img_item">
+      <img src="assets/reunion_l.jpg" />
+    </div>
 
-    <img src="assets/chiffres.jpg" />
+    <div class="img_item">
+      <img src="assets/2.jpg" />
+    </div>
 
-    <img src="assets/chiffres_1.jpg" />
+    <div class="img_item">
+      <img src="assets/reunion_l.jpg" />
+    </div>
 
-    test 
-    <img src="assets/back_3.jpg" />
+    <div class="img_item">
+      <img src="assets/back_7.jpg" />
+    </div>
 
-    
-    <img src="assets/novae.png" />
+    <div class="img_item">
+      <img src="assets/back_3.jpg" />
+    </div>
 
-    
+    <div class="img_item">
+      <img src="assets/chiffres.jpg" />
+    </div>
 
+    <div class="img_item">
+      <img src="assets/chiffres_1.jpg" />
+    </div>
+
+    <div class="img_item">
+      <img src="assets/back_3.jpg" />
+    </div>
 
   </div>
 

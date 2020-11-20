@@ -246,7 +246,7 @@ main {
     
     // DEBUT
     .debut {
-        background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../assets/back_3.jpg);
+        background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../assets/back_scott_light.jpg);
         height: 90vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -377,7 +377,7 @@ main {
                 }
 
                 span {
-                    font-size: 2em;
+                    font-size: 1.3em;
                     font-weight: bolder;
                     color: $color-text;
                 }
@@ -430,7 +430,7 @@ main {
                     padding: 5px;
                     width: 96%;
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-                    content:url(../assets/1.jpg) ;
+                    content:url(../assets/reunion_b_l.jpg) ;
                 }
             }
         }
@@ -538,7 +538,7 @@ main {
                     flex: 2;
                     padding: 30px 40px 30px 30px;
                     h4 {
-                        font-size: 1.6em;
+                        font-size: 1.2em;
                         font-weight: 600;
                         color: $color_light;
                         text-transform: uppercase;
@@ -561,10 +561,27 @@ main {
     
                     img {
                         padding: 5px;
-                        max-width: 60%;
+                        max-width: 75%;
                         box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.55);
 
                     }
+                }
+
+                .actu_img.news {
+
+                    &::after {
+                        position: absolute;
+                        content:"Nouveauté";
+                        text-transform: uppercase;;
+                        color: red;
+                        font-size: 1.2em;
+                        top: 5px;
+                        right: 10px;
+                        border: 3px solid red;
+                        padding:5px 3px;
+                        font-weight: 600;
+                        transform: translateX(-50%) rotate(4deg);
+                    }                   
                 }
             }
     }
@@ -598,7 +615,7 @@ main {
         }
     }
 }
-// FIN MAINs
+// FIN MAIN
 
 // FOOTER
 
@@ -640,9 +657,20 @@ footer {
             font-size: 1.2em;
             font-weight: bold;
             color: $color_light;
-            margin-bottom: 20px;
+            margin-bottom: 35px;
             text-transform: uppercase !important;
             text-shadow: rgba(0, 0, 0, 0.45) 2px 2px;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 30%;
+                border: 2px solid white;
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+
+            }
         }
 
         .contact {
@@ -813,7 +841,7 @@ footer {
                     }
     
                     span {
-                        font-size: 2.2em;
+                        font-size: 1.4em;
                     }
                 }
             }
@@ -827,6 +855,7 @@ footer {
 
                 h4 {
                     font-size: 2em;
+                    margin: 0;
                 }
 
                 button {
@@ -948,7 +977,7 @@ footer {
 
     main {
         .debut {
-            background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../assets/back.jpg);
+            //background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../assets/back.jpg);
         }
         
         // MISSIONS
@@ -1008,7 +1037,7 @@ footer {
                         padding: 5px;
                         width: 110%;
                         box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-                        content:url(../assets/reunion.jpg) ;
+                        //content:url(../assets/reunion.jpg) ;
                         transform: rotate(3deg);
                     }
                 }
@@ -1072,6 +1101,7 @@ footer {
 
         // ACTUS
         .actus {
+
             .actus_container {
                 display: flex;
                 flex-direction: row;
@@ -1102,10 +1132,21 @@ footer {
                     align-items: center;
 
                     img {
-                        padding: 5px;
+                        padding: 5px 5px 5px 0;
                         min-width: 200px;
                         max-width: 80%;
                     }
+                }
+
+                .actu_img.news {
+                    img {
+                        min-width: 500px; 
+                        position: relative;                 
+                    }
+
+                    &::after {
+                        transform: rotate(4deg);
+                    }         
                 }
             }
         }
@@ -1114,9 +1155,6 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) {
-
-}
 
 // FIN MEDIA QUERIES 
 

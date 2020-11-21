@@ -94,7 +94,7 @@ header {
     // Menu mobile
     .nav_menu_mobile {
         top: 0;
-        width: 60vw;
+        width: 100vw;
         right: 0;
         transition: 0.3s ease-in-out;
         position: absolute;
@@ -117,8 +117,6 @@ header {
                 align-items: center;
                 cursor: pointer;
                 transition: 0.3s ease-in-out;
-                transform: translateY(100em);
-                animation: slideDown .5s forwards;
 
                 a{  
                     font-size: 1.2em;
@@ -139,27 +137,25 @@ header {
                 }
 
                 &:nth-child(1) {
-                    animation-delay: 4s;
+                    animation-delay: 0s;
                 }
 
                 &:nth-child(2) {
-                    animation-delay: 4.5s;
+                    animation-delay: 0.5s;
                 }
 
                 &:nth-child(3) {
-                    animation-delay: 5s;
+                    animation-delay: 1s;
                 }
 
                 &:nth-child(4) {
-                    animation-delay: 5.5s;
+                    animation-delay: 1.5s;
                 }
 
                 &:nth-child(5) {
-                    animation-delay: 6s;
+                    animation-delay: 2s;
                 }
-
-
-            }
+            }        
         }
 
         .connecter {
@@ -168,9 +164,9 @@ header {
             justify-content: center;
             align-items: center;
             position: relative;
-            transform: translateX(-100em);
-            animation: slideIn .5s forwards;
-            animation-delay: 6.5s;
+            // transform: translateX(-100em);
+            // animation: slideIn .5s forwards;
+             animation-delay: 3s;
 
             a {
                 color: $color-text;
@@ -197,6 +193,16 @@ header {
                 }
             }
         }
+    }
+    
+    .animate_box {
+        transform: translateY(100em);
+        animation: boxShadow 1.5s forwards;
+    }
+
+    .animate_slide {
+        transform: translateX(-100em);
+        animation: slideDown .5s forwards;
     }
 
     .nav_menu_mobile.fade {
@@ -430,8 +436,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: rgba(0, 0, 0, 0.14);
-                            
+                background-color: rgba(0, 0, 0, 0.14);                        
                 width: 70%;
                 margin: auto;
 
@@ -1165,7 +1170,6 @@ footer {
     }
 }
 
-
 // FIN MEDIA QUERIES 
 
 
@@ -1182,12 +1186,27 @@ footer {
 
 @keyframes slideDown {
     from {
-
+        background: $color_light;
     }
+    
     to {
         transform: translateY(0);
     }
 }
+
+@keyframes boxShadow {
+    from {
+        box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+        transform: scale(1.8);
+        background: $color_light;
+    }
+    
+    to {
+        transform: scale(1);
+    }
+}
+
+
 
 //FIN ANIMATION
 

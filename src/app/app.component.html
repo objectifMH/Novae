@@ -31,29 +31,29 @@
       <span class="material-icons icon_menu"
         [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
         (click)="getShowMenu()">
-  
       </span>
     </div>
   </div>
   <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
+    
     <ul class="liste_menu container ">
-      <li>
-        <a [routerLink]="['/']" fragment="missions" >NOS MISSIONS</a>
+      <li [ngClass]="{'animate_box': isShowMenu}">
+        <a [routerLink]="['/']" fragment="missions" (click)="getShowMenu()">NOS MISSIONS</a>
       </li>
-      <li>
-        <a [routerLink]="['/']" fragment="cabinet" >NOTRE CABINET</a>
+      <li [ngClass]="{'animate_box': isShowMenu}">
+        <a [routerLink]="['/']" fragment="cabinet" (click)="getShowMenu()">NOTRE CABINET</a>
       </li>
-      <li>
-        <a [routerLink]="['/']" fragment="solution" >NOS SOLUTIONS</a>
+      <li [ngClass]="{'animate_box': isShowMenu}">
+        <a [routerLink]="['/']" fragment="solution" (click)="getShowMenu()">NOS SOLUTIONS</a>
       </li>
-      <li>
-        <a [routerLink]="['/']" fragment="actus" >NOS ACTUS</a>
+      <li [ngClass]="{'animate_box': isShowMenu}">
+        <a [routerLink]="['/']" fragment="actus" (click)="getShowMenu()" >NOS ACTUS</a>
       </li>
-      <li>
-        <a [routerLink]="['/']" fragment="contacter" >NOUS CONTACTER</a>
+      <li [ngClass]="{'animate_box': isShowMenu}">
+        <a [routerLink]="['/']" fragment="contacter" (click)="getShowMenu()">NOUS CONTACTER</a>
       </li>
     </ul>
-    <div class="connecter">
+    <div class="connecter"  [ngClass]="{'animate_slide': isShowMenu}">
       <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
     </div>
 

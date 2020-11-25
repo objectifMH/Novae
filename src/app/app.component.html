@@ -6,19 +6,19 @@
   <div class="centre">
     <ul class="liste_menu">
       <li>
-        <a [routerLink]="['/']" fragment="missions" >NOS MISSIONS</a>
+        <a [routerLink]="['/']" fragment="missions">NOS MISSIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="cabinet" >NOTRE CABINET</a>
+        <a [routerLink]="['/']" fragment="cabinet">NOTRE CABINET</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="solution" >NOS SOLUTIONS</a>
+        <a [routerLink]="['/']" fragment="solution">NOS SOLUTIONS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="actus" >NOS ACTUS</a>
+        <a [routerLink]="['/']" fragment="actus">NOS ACTUS</a>
       </li>
       <li>
-        <a [routerLink]="['/']" fragment="contacter" >NOUS CONTACTER</a>
+        <a [routerLink]="['/']" fragment="contacter">NOUS CONTACTER</a>
       </li>
     </ul>
 
@@ -27,7 +27,7 @@
     <div class="connecter">
       <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
     </div>
-    <div class="menu" >
+    <div class="menu">
       <span class="material-icons icon_menu"
         [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
         (click)="getShowMenu()">
@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
-    
+
     <ul class="liste_menu container ">
       <li [ngClass]="{'animate_box': isShowMenu}">
         <a [routerLink]="['/']" fragment="missions" (click)="getShowMenu()">NOS MISSIONS</a>
@@ -47,13 +47,13 @@
         <a [routerLink]="['/']" fragment="solution" (click)="getShowMenu()">NOS SOLUTIONS</a>
       </li>
       <li [ngClass]="{'animate_box': isShowMenu}">
-        <a [routerLink]="['/']" fragment="actus" (click)="getShowMenu()" >NOS ACTUS</a>
+        <a [routerLink]="['/']" fragment="actus" (click)="getShowMenu()">NOS ACTUS</a>
       </li>
       <li [ngClass]="{'animate_box': isShowMenu}">
         <a [routerLink]="['/']" fragment="contacter" (click)="getShowMenu()">NOUS CONTACTER</a>
       </li>
     </ul>
-    <div class="connecter"  [ngClass]="{'animate_slide': isShowMenu}">
+    <div class="connecter" [ngClass]="{'animate_slide': isShowMenu}">
       <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
     </div>
 
@@ -81,9 +81,9 @@
   <!-- missions  -->
   <div class="missions container-fluid bg_linear_transparent" id="missions">
     <div class="titre container">
-      <div class="titre_container" >
+      <div class="titre_container">
         <h2>Nos Missions</h2>
-        <h3 >Notre expertise à votre service</h3>
+        <h3>Notre expertise à votre service</h3>
       </div>
     </div>
     <div class="missions_container container">
@@ -168,7 +168,7 @@
         </span>
       </div>
       <div class="chiffre">
-        <h3 >
+        <h3>
           +<span class="counter" data-count="200">0</span>
         </h3>
         <span>
@@ -176,7 +176,7 @@
         </span>
       </div>
       <div class="chiffre">
-        <h3 >
+        <h3>
           +<span class="counter" data-count="1000">0</span>
         </h3>
         <span>
@@ -199,14 +199,17 @@
       <div class="cabinet_text">
         <h4>Avec Novae tout est carré !</h4>
         <p>
-          Novae est un cabinet d'expertise comptable qui vous encadre et est proche de vos besoins dans tous les domaines financiers et fiscales.
-          La rigueur et l'écoute de nos experts vous soutiennent quotidiennement dans vos projets et ça quelque soit votre domaine d'activité.
-          Situé à St-françois et bientot à Baillif, Novae Consulting votre cabinet qui reste proche de vous sur toute l'ile.
+          Novae est un cabinet d'expertise comptable qui vous encadre et est proche de vos besoins dans tous les
+          domaines financiers et fiscales.
+          La rigueur et l'écoute de nos experts vous soutiennent quotidiennement dans vos projets et ça quelque soit
+          votre domaine d'activité.
+          Situé à St-françois et bientot à Baillif, Novae Consulting votre cabinet qui reste proche de vous sur toute
+          l'ile.
 
         </p>
       </div>
       <div class="cabinet_img">
-        <img  class="reunion_img" />
+        <img class="reunion_img" />
       </div>
 
     </div>
@@ -214,7 +217,7 @@
   <!-- fin cabinet  -->
 
   <!-- contactez-nous  -->
-  <div class="container contactez" >
+  <div class="container contactez">
     <div class="contactez_container">
       <h4>
         Des&nbsp;questions sur votre fiscalité ? Une&nbsp;demande de&nbsp;devis !
@@ -223,7 +226,7 @@
         Contactez-nous
       </button>
     </div>
-  </div>  
+  </div>
   <!-- fin contactez-nous  -->
 
   <!-- solutions  -->
@@ -234,7 +237,7 @@
         <h3>Nos solutions à votre sercice</h3>
       </div>
     </div>
-    <div class="solutions_container container isuite"> 
+    <div class="solutions_container container isuite">
       <div class="solution_img" data-aos="zoom-in-up" data-aos-duration="700">
         <img src="assets/isuite.png" />
       </div>
@@ -242,20 +245,24 @@
         <h4>iSuite Expert</h4>
         <p>
           iSuite permet notamment de saisir et de déposer vos pièces comptables.
-          Cette solution offre un suivi en temps réel de la situation financière de votre société, pour une gestion pratique de vos comptes.
+          Cette solution offre un suivi en temps réel de la situation financière de votre société, pour une gestion
+          pratique de vos comptes.
           La modernisation a l'aide de votre quotidien.
         </p>
       </div>
     </div>
-    <div class="solutions_container container meg"> 
-      
+    <div class="solutions_container container meg">
+
       <div class="solution_img" data-aos="zoom-in-up" data-aos-duration="700">
         <img src="assets/meg.png" />
       </div>
       <div class="solution_text">
         <h4>MEG Mon Expert en Gestion</h4>
         <p>
-          MEG (Mon Expert en Gestion) est un portail collaboratif permettant de gérer la facturation, les achats, les notes de frais, votre caisse et votre banque. Constitué de différents modules, cet environnement unique est le socle de notre accompagnement : il vous aide à piloter votre entreprise sereinement. Vous pouvez également y accéder via iSuite.
+          MEG (Mon Expert en Gestion) est un portail collaboratif permettant de gérer la facturation, les achats, les
+          notes de frais, votre caisse et votre banque. Constitué de différents modules, cet environnement unique est le
+          socle de notre accompagnement : il vous aide à piloter votre entreprise sereinement. Vous pouvez également y
+          accéder via iSuite.
         </p>
       </div>
     </div>
@@ -270,8 +277,8 @@
         <h3>Etre informé pour etre plus performant </h3>
       </div>
     </div>
-    <div class="actus_container container"> 
-      
+    <div class="actus_container container">
+
       <div class="actu_text">
         <h4>COVID-19 : Comment Gerer son entreprise en période de crise </h4>
         <p>10 Novembre 2020 </p>
@@ -280,8 +287,8 @@
         <img src="assets/covid19.jpg" />
       </div>
     </div>
-    <div class="actus_container container"> 
-      
+    <div class="actus_container container">
+
       <div class="actu_text">
         <h4>COVID-19 : Mesures sanitaires </h4>
         <p>10 Novembre 2020 </p>
@@ -290,13 +297,127 @@
         <img src="assets/mesure_covid.jpg" />
       </div>
     </div>
-      <div class="titre container ">
-        <div class="titre_container">
-          <h3>Archives</h3>
-        </div>
+    <div class="titre container ">
+      <div class="titre_container">
+        <h3>Archives</h3>
       </div>
+    </div>
 
-    <div class="actus_container container"> 
+    <div class="news-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="news-grid">
+              <div class="news-grid-image">
+                <img src="../assets/christina.jpg" alt="">
+                <div class="news-grid-box">
+                  <h1>19</h1>
+                  <p>Sept</p>
+                </div>
+              </div>
+  
+              <div class="news-grid-txt"> 
+                <span class="theme">Finance</span>
+                <h2>COVID-19 : LE FONDS DE SOLIDARITÉ MAINTENU JUSQU’AU 31 DÉCEMBRE 2020</h2>
+                <ul>
+                  <li>
+                    <span class="material-icons">
+                    today
+                    </span>
+                    Nov 22, 2020</li>
+                  <li>
+                    <span class="material-icons">
+                      person
+                    </span>
+                      Novae Team</li>
+                </ul>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
+                </p>
+                <a href="">Lire Plus</a>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="news-grid">
+              <div class="news-grid-image">
+                <img src="../assets/2.jpg" alt="">
+                <div class="news-grid-box">
+                  <h1>19</h1>
+                  <p>Sept</p>
+                </div>
+              </div>
+  
+              <div class="news-grid-txt"> 
+                <span class="theme">Finance</span>
+                <h2> 
+                  ENTREPRISES EN DIFFICULTÉ : UN NUMÉRO SPÉCIAL D’INFORMATION SUR LES MESURES D’URGENCES</h2>
+                
+                <ul>
+                  <li>
+                      <span class="material-icons">
+                        today
+                      </span>
+                      
+                    Nov 22, 2020
+                    
+                  </li>
+                  <li>
+                    <span class="material-icons">
+                      person
+                    </span>
+                      Novae Team</li>
+                </ul>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
+                </p>
+                <a href="">Lire Plus</a>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="news-grid">
+              <div class="news-grid-image">
+                
+                <img src="../assets/1.jpg" alt="">
+                <div class="news-grid-box">
+  
+                  <h1>19</h1>
+                  <p>Sept</p>
+                </div>
+              </div>
+              <div class="news-grid-txt"> 
+                <span class="theme">Finance</span>
+                <h2>PGE : prolongé jusqu’au 30 juin 2021</h2>
+                <ul>
+                  <li>
+                    <span class="material-icons">
+                    today
+                    </span>
+                    Nov 22, 2020</li>
+                  <li>
+                    <span class="material-icons">
+                      person
+                    </span>
+                      Novae Team</li>
+                </ul>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
+                </p>
+                <a href="">Lire Plus</a>
+  
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- <div class="actus_container container">
       <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
         <img src="assets/christina.jpg" />
       </div>
@@ -305,7 +426,7 @@
         <p>12 Septembre 2020 </p>
       </div>
     </div>
-    <div class="actus_container container"> 
+    <div class="actus_container container">
       <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
         <img src="assets/1.jpg" />
       </div>
@@ -314,7 +435,7 @@
         <p>25 Novembre 2020 </p>
       </div>
     </div>
-    <div class="actus_container container"> 
+    <div class="actus_container container">
       <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
         <img src="assets/chiffres_1.jpg" />
       </div>
@@ -322,48 +443,15 @@
         <h4>PGE : prolongé jusqu’au 30 juin 2021</h4>
         <p>04 Decembre 2020 </p>
       </div>
-    </div>
+    </div> -->
   </div>
   <!-- fin actus  -->
 
+  
 
 
 
-  <!-- <div class="container test_img">
-    
-    <div class="img_item">
-      <img src="assets/reunion_l.jpg" />
-    </div>
 
-    <div class="img_item">
-      <img src="https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80 334w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80 634w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80 668w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80 934w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80 1234w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80 1268w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80 1534w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80 1834w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80 1868w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80 2134w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80 2434w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80 2468w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80 2734w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3034&q=80 3034w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3068&q=80 3068w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80 3334w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3634&q=80 3634w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3668&q=80 3668w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3934&q=80 3934w, https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4016&q=80 4016w" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/reunion_l.jpg" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/back_7.jpg" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/back_3.jpg" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/chiffres.jpg" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/chiffres_1.jpg" />
-    </div>
-
-    <div class="img_item">
-      <img src="assets/back_3.jpg" />
-    </div>
-
-  </div> -->
 
 
 </main>
@@ -401,7 +489,7 @@
             12, rue des allouettes
             97123 St-François
           </p>
-  
+
         </li>
         <li>
           <span class="material-icons">
@@ -442,7 +530,7 @@
         </li>
       </ul>
     </div>
-  
+
     <span class="footer_down">
       © M. Hatchi, Tous droits réservés - 2020
     </span>

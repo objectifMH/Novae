@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { counter } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import * as AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,30 @@ export class AppComponent {
   faLinkedinIn = faLinkedinIn;
   faTwitter = faTwitter;
   faGithub = faGithub;
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay: true,
+    dots: true,
+    navSpeed: 200,
+    // navText: ["<span class='material-icons'>arrow_left</span>",
+    //  "<span class='material-icons'>arrow_right</span>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      490: {
+        items: 3, 
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: false
+  }
 
 
   ngOnInit() {

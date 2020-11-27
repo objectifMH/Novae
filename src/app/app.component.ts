@@ -19,7 +19,7 @@ export class AppComponent {
   faTwitter = faTwitter;
   faGithub = faGithub;
 
-  customOptions: OwlOptions = {
+  customOptions_actus: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
@@ -34,10 +34,34 @@ export class AppComponent {
         items: 1
       },
       490: {
-        items: 3, 
+        items: 2, 
+      },
+      640: {
+        items: 3
+      }
+    },
+    nav: false
+  }
+
+  customOptions_testimonial: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay: true,
+    dots: true,
+    navSpeed: 200,
+    // navText: ["<span class='material-icons'>arrow_left</span>",
+    //  "<span class='material-icons'>arrow_right</span>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      490: {
+        items: 1, 
       },
       940: {
-        items: 3
+        items: 1
       }
     },
     nav: false

@@ -16,6 +16,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
+
 // HEADER 
 header.opacity_true {
     opacity: 1 ;
@@ -259,7 +260,7 @@ main {
                 font-weight: 700;
                 text-transform: uppercase;
                 font-size: 1.2em;
-                color: #003e59 !important;
+                color: #003e59;
                 letter-spacing: 1.5px;
                 line-height: 1.1em;
                 position: relative;
@@ -313,6 +314,8 @@ main {
                 padding-left: 38px!important;
                 transition: 0.3s ease-in-out;
 
+                margin-bottom: 50px;
+
                 &:hover {
                     transform: translateY(-5px);
                     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
@@ -331,7 +334,7 @@ main {
                 bottom: 10px;
                 margin: auto;
                 display: inline-block;
-                width: 45px;
+                width: 40px;
             }
         }
         
@@ -987,6 +990,19 @@ main {
         background-size: cover;
         background-attachment: fixed;
         padding: 30px;
+
+        .titre {
+            margin-bottom: 50px;
+        }
+
+        .testimonial_color_white {
+            color: white !important;
+
+            &:after {
+                border: 2px solid white !important;
+            }
+        }
+
 
         .testimonial_container {
             background-image: linear-gradient(-360deg, #289bc21c, rgb(0 0 0 / 48%));

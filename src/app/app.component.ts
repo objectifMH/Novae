@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { isNgContainer } from '@angular/compiler';
 import { Component, HostListener } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { counter } from '@fortawesome/fontawesome-svg-core';
-import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faLinkedinIn, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import * as AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -18,6 +20,7 @@ export class AppComponent {
   faLinkedinIn = faLinkedinIn;
   faTwitter = faTwitter;
   faGithub = faGithub;
+  faFacebook = faFacebook;
 
   customOptions_actus: OwlOptions = {
     loop: true,
@@ -67,6 +70,22 @@ export class AppComponent {
     nav: false
   }
 
+  
+  errorMail = false;
+  errorNom = false;
+  errorMessage = false;
+  errorPrenom = false;
+
+  contactForm: FormGroup;
+  
+  constructor(private fb: FormBuilder, private httpClient: HttpClient) {
+    this.contactForm = this.fb.group({
+      nom: [''],
+      prenom: [''],
+      mail: [''],
+      message: ['']
+    });
+  }
 
   ngOnInit() {
     AOS.init();
@@ -116,6 +135,70 @@ export class AppComponent {
     this.isShowMenu = !this.isShowMenu;
     this.isRotateMenu = !this.isRotateMenu;
   }
+
+  onFocusMethod(e) {
+    e.srcElement.parentNode.classList.add("focus");
+  }
+
+  onBlurMethod(e) {
+    let attr = e.target.id;
+    if (this.contactForm.value[attr] === "")
+      e.srcElement.parentNode.classList.remove("focus");
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log(this.contactForm);
+      let message =  this.contactForm.value.message + "\n Envoyé de Novae. ";
+      
+
+      let formData = new FormData();
+      formData.append("name", this.contactForm.value.nom);
+      formData.append("prenom", this.contactForm.value.prenom);
+      formData.append("email", this.contactForm.value.mail);
+      formData.append("message", message);
+
+
+      this.httpClient.post("https://formspree.io/f/mknpvgjd", formData).subscribe(
+        response => {
+          this.errorMail = this.contactForm.controls.mail.status === "VALID" ? false : true;
+          this.errorMessage = this.contactForm.controls.message.status === "VALID" ? false : true;
+          this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
+          this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
+
+          // this.toastr.success(this.contactForm.value.nom + ", Votre message a bien été envoyé ", "Message", {
+          //   timeOut: 1800,
+          //   progressBar: true,
+          //   progressAnimation: 'increasing'
+          // })
+
+          this.contactForm = this.fb.group({
+            nom: [''],
+            prenom: [''],
+            mail: [''],
+            message: ['']
+          });
+
+          let form_inputs = document.querySelectorAll('.form-group');
+          form_inputs.forEach(element => { 
+            element.classList.remove("focus");
+          });
+
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+    else {
+      this.errorMail = this.contactForm.controls.mail.status === "VALID" ? false : true;
+      this.errorMessage = this.contactForm.controls.message.status === "VALID" ? false : true;
+      this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
+      this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
+    }
+  }
+
+
 
 
 }

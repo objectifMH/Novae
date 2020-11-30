@@ -897,7 +897,7 @@
   <!-- fin testimonial  -->
 
   <!-- nous contacter  -->
-  <div class="actus  container-fluid" id="actus">
+  <div class="contacter  container-fluid" id="contacter">
     <div class="titre container ">
       <div class="titre_container">
         <h2>Nous Conctacter</h2>
@@ -906,8 +906,106 @@
     </div>
 
     <!-- ***  -->
+    <div class="form container">
+      <!-- contact  -->
+      <div class="contact-info ">
+       
+        <h3 class="titre">Nous contacter </h3>
+        <div class="info_container">
+          <div data-aos="" data-aos-duration="">
+            <span class="material-icons">
+              location_on
+            </span>
+            <p>
+              Petit Colibri
+              <br />
+              97123, St-François
+            </p>
+          </div>
+          <div data-aos="" data-aos-duration="">
+            <span class="material-icons">
+              phone
+            </span>
+            <p>
+              +33 (0)6 87 43 57 61
+            </p>
+          </div>
+          <div class="contact" data-aos="" data-aos-duration="">
+            <a href="mailto:mhatchi@yahoo.fr">
+              <span class="material-icons">
+                mail
+              </span>
+            </a>
+            <p>
+              mhatchi@yahoo.fr
+            </p>
+          </div>
 
-    
+        </div>
+        <!-- reseaux  -->
+
+        <div class="reseaux_contact">
+          <a href='https://www.linkedin.com/in/m-hatchi-bb4b49156/' title="Linkedin" target="_blank">
+            <fa-icon class="linkedinin" [icon]="faLinkedinIn"></fa-icon>
+          </a>
+          <a href='https://github.com/objectifMH/' target="_blank" title="Github">
+            <fa-icon class="github" [icon]="faGithub"></fa-icon>
+          </a>
+          <a href='' target="_blank" title="faFacebook">
+            <fa-icon class="linkedinin" [icon]="faFacebook"></fa-icon>
+          </a>
+          <a href='' target="_blank" title="faTwitter">
+            <fa-icon class="linkedinin" [icon]="faTwitter"></fa-icon>
+          </a>
+        </div>
+
+        <!-- fin reseaux  -->
+
+      </div>
+      <!-- formulaire contact  -->
+      <div class="contact-form">
+        <form [formGroup]="contactForm">
+          <h3 class="titre">Envoyez un message</h3>
+          <div class="form-group nom ">
+
+            <input type="text" class="form-control" required formControlName="nom" id="nom"
+              (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)" [ngClass]="{'errorForm': errorNom }">
+            
+            <span>
+              Nom
+            </span>
+          </div>
+          <div class="form-group prenom ">
+
+            <input type="text" class="form-control " required formControlName="prenom" id="prenom"
+              (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)" [ngClass]="{'errorForm': errorPrenom }">
+            
+            <span>
+              Prénom
+            </span>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" required formControlName="mail" email="true" id="mail"
+              (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)" [ngClass]="{'errorForm': errorMail }">
+            <label for="">Mail</label>
+            <span>
+              Mail
+            </span>
+          </div>
+          <div class="form-group">
+            <textarea formControlName="message" required id="message" (blur)="onBlurMethod($event)"
+              (focus)="onFocusMethod($event)" [ngClass]="{'errorForm': errorMessage }"></textarea>
+            <label class="label_textarea" for="">Message</label>
+            <span>
+              Message
+            </span>
+          </div>
+          <button type="submit" class="btn" (click)="onSubmit()">Envoyer</button>
+        </form>
+      </div>
+
+    </div>
+
 
     <!-- ***  -->
   </div>

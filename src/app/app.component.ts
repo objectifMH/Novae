@@ -17,6 +17,8 @@ export class AppComponent {
   isShowMenu = false;
   isRotateMenu = false;
 
+  firstMenuNav = 0;
+
   faLinkedinIn = faLinkedinIn;
   faTwitter = faTwitter;
   faGithub = faGithub;
@@ -134,6 +136,7 @@ export class AppComponent {
   getShowMenu() {
     this.isShowMenu = !this.isShowMenu;
     this.isRotateMenu = !this.isRotateMenu;
+    this.firstMenuNav++;
   }
 
   onFocusMethod(e) {

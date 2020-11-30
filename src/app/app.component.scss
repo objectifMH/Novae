@@ -16,7 +16,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-
 // HEADER 
 header.opacity_true {
     opacity: 1 ;
@@ -648,8 +647,6 @@ main {
                 .carousel-item {
                     margin: 5px;
                   }
-                
-         
 
                 // article détaillé nouveaux 
 
@@ -1088,6 +1085,10 @@ main {
     // FIN TESTIMONIALS
 
     // CONTACTER
+    .contacter {
+        padding: 40px 0 150px;
+    }
+
     .form {
         width: 100%;
         position: relative;
@@ -1180,7 +1181,7 @@ main {
         display: block;
 
         form {
-            padding: 2rem 1.4rem 2rem;
+            padding: 2rem 2.2rem 3.5rem 2em;
             z-index: 10;
             overflow: hidden;
             position: relative;
@@ -1214,11 +1215,15 @@ main {
                     z-index: 500;
                     transition: 0.5s;
                 }
+
+                .form-control:focus {
+                    box-shadow: none;                  
+                }
             }
 
             .form-group.focus {
                 span {
-                    transform: translateY(-25px);
+                    transform: translateY(-18px);
                     color:#2c8498;
                     font-size: 1em;
                 }
@@ -1268,7 +1273,7 @@ main {
             }
 
             .prenom {
-                margin: 0 0 0 20px;
+                margin: 0 0 0 10%;
 
             }
 
@@ -1277,6 +1282,8 @@ main {
                 min-height: 150px;
                 resize: none;
                 overflow-y: auto;
+                margin-top: 15px;
+
 
             }
 
@@ -1286,23 +1293,34 @@ main {
                 transform: translateY(0);
             }
 
-            button {
-                padding: 0.6rem 1.3rem;
-                background-color: $color_text;
-                border: 2px solid #fafafa;
-                font-size: 0.95rem;
-                color:  #206894;
-                line-height: 1;
-                outline: none;
-                cursor: pointer;
-                transition: .3s;
-                position: absolute;
-                right: 37px;
+            .envoyer {
+                display: flex;
+                justify-content: flex-end;
 
-                &:hover {
-                    background-color: transparent;
-                    color: $color_text;
-                }
+                button {
+                    color: $color_dark;
+                    background: $color_text;
+                    padding: 10px 25px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 170%;
+                    letter-spacing: 1px;
+                    text-decoration-line: none;
+                    transition: 0.5s;
+                    text-transform: uppercase;
+                    border-radius: 0;
+    
+                    &:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+                    }
+            }
+            
+            }
+
+            .btn.focus, .btn:focus {
+                outline: 0;
+                box-shadow: none;
             }
         }
     }
@@ -1675,7 +1693,7 @@ footer {
         // CONTACTER 
         .form {
             width: 100%;
-            height: 500px;
+            height: 550px;
             position: relative;
             margin: 50px auto;
 
@@ -1699,7 +1717,7 @@ footer {
                 background: linear-gradient(150deg, #003e59 0%, #183e59 100%);
             
                 form {
-                    padding: 4.3rem 2.2rem 3.5rem 8em;
+                    padding: 6rem 2.2rem 3.5rem 8em;
                     z-index: 10;
                     overflow: hidden;
                     position: relative;

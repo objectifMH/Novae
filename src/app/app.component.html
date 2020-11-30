@@ -37,23 +37,23 @@
   <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
 
     <ul class="liste_menu container ">
-      <li [ngClass]="{'animate_box': isShowMenu}">
+      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
         <a [routerLink]="['/']" fragment="missions" (click)="getShowMenu()">NOS MISSIONS</a>
       </li>
-      <li [ngClass]="{'animate_box': isShowMenu}">
+      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
         <a [routerLink]="['/']" fragment="cabinet" (click)="getShowMenu()">NOTRE CABINET</a>
       </li>
-      <li [ngClass]="{'animate_box': isShowMenu}">
+      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
         <a [routerLink]="['/']" fragment="solution" (click)="getShowMenu()">NOS SOLUTIONS</a>
       </li>
-      <li [ngClass]="{'animate_box': isShowMenu}">
+      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
         <a [routerLink]="['/']" fragment="actus" (click)="getShowMenu()">NOS ACTUS</a>
       </li>
-      <li [ngClass]="{'animate_box': isShowMenu}">
+      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
         <a [routerLink]="['/']" fragment="contacter" (click)="getShowMenu()">NOUS CONTACTER</a>
       </li>
     </ul>
-    <div class="connecter" [ngClass]="{'animate_slide': isShowMenu}">
+    <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
       <a [routerLink]="['/']" fragment="connection">SE CONNECTER</a>
     </div>
 
@@ -1000,7 +1000,9 @@
               Message
             </span>
           </div>
-          <button type="submit" class="btn" (click)="onSubmit()">Envoyer</button>
+          <div class="envoyer">
+            <button type="submit" class="btn" (click)="onSubmit()">Envoyer</button>
+          </div>
         </form>
       </div>
 

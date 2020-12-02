@@ -1,0 +1,115 @@
+@import '../../styles.scss';
+
+section {
+    min-height: 100vh;
+    background-color: azure;
+
+    .container {
+        position: relative;
+        overflow: hidden;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+
+            .col {
+                width: 50%;
+            }
+
+            .align-center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .flex-col {
+                flex-direction: column;
+            }
+
+            .form-wrapper {
+                width: 100%;
+                max-width: 28rem;
+
+                .form {
+                    padding: 1rem;
+                    background: $color-text;
+                    //border-radius: 1.5rem;
+                    width: 100%;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+
+                    transition: 500ms ease-in-out;
+                    transition-delay: 1s;
+
+                    .form-group {
+                        position: relative;
+                        width: 100%;
+                        margin: 1rem 0;
+
+                        input {
+                            width: 100%;
+                            padding: 1.4rem 1.2rem;
+                            font-size: 1.2em;
+                            background-color: rgba(0, 0, 0, 0.05);
+                            //border-radius: 0.5rem;
+                            border: 0.125rem solid $color-text;
+                            outline: none;
+                            text-indent: 30px;
+
+                            &::placeholder {
+                                color: $color-light;
+                                padding: 10px 25px;
+                              }
+                        }
+
+                        .material-icons {
+                            position: absolute;
+                            top: 50%;
+                            left: 1rem;
+                            transform: translateY(-50%);
+                            font-size: 1.4rem;
+                            color: $color-light;
+                        }
+                    }
+
+                    .envoyer {
+                        display: flex;
+                        justify-content: flex-end;
+                        margin: 40px auto;
+        
+                        button {
+                            color: $color_text;
+                            background: $color_dark;
+                            padding: 10px 25px;
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 170%;
+                            letter-spacing: 1px;
+                            text-decoration-line: none;
+                            transition: 0.5s;
+                            text-transform: uppercase;
+                            border-radius: 0;
+            
+                            &:hover {
+                                transform: translateY(-5px);
+                                box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+                            }
+                    }
+                    
+                    }
+        
+                    .btn.focus, .btn:focus {
+                        outline: 0;
+                        box-shadow: none;
+                    }
+
+                    p {
+                        font-size: 0.7rem;;
+                    }
+                }
+            }
+        }
+
+    }
+}

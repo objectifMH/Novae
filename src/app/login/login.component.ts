@@ -10,18 +10,27 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  recordForm: FormGroup;
 
   errorMail = false;
   errorPseudo = false;
   errorMdp = false;
   errorMdpConf = false;
+
+  isSeConnecterIn = false; 
+  isSeConnecterUp = true; 
   
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {
-    this.loginForm = this.fb.group({
+    this.recordForm = this.fb.group({
       pseudo: [''],
       mail: [''],
       mdp: [''],
       mdpConf: ['']
+    });
+
+    this.loginForm = this.fb.group({
+      pseudo: [''],
+      mdp: ['']
     });
   }
 
@@ -34,20 +43,24 @@ export class LoginComponent implements OnInit {
 
   onBlurMethod(e) {
     let attr = e.target.id;
-    if (this.loginForm.value[attr] === "")
+    if (this.recordForm.value[attr] === "")
+      e.srcElement.parentNode.classList.remove("focus");
+
+      let attr_login = e.target.id;
+    if (this.loginForm.value[attr_login] === "")
       e.srcElement.parentNode.classList.remove("focus");
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm);
-      let message =  this.loginForm.value.message + "\n Envoyé de Novae. ";
+    if (this.recordForm.valid) {
+      console.log(this.recordForm);
+      let message =  this.recordForm.value.message + "\n Envoyé de Novae. ";
       
 
       let formData = new FormData();
-      formData.append("pseudo", this.loginForm.value.pseudo);
-      formData.append("mail", this.loginForm.value.mail);
-      formData.append("mdp", this.loginForm.value.mdp);
+      formData.append("pseudo", this.recordForm.value.pseudo);
+      formData.append("mail", this.recordForm.value.mail);
+      formData.append("mdp", this.recordForm.value.mdp);
 
 
       this.httpClient.post("https://formspree.io/f/mknpvgjd", formData).subscribe(
@@ -63,7 +76,7 @@ export class LoginComponent implements OnInit {
           //   progressAnimation: 'increasing'
           // })
 
-          this.loginForm = this.fb.group({
+          this.recordForm = this.fb.group({
             pseudo: [''],
             mail: [''],
             mdp: [''],
@@ -86,8 +99,22 @@ export class LoginComponent implements OnInit {
       // this.errorMessage = this.contactForm.controls.message.status === "VALID" ? false : true;
       // this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
       // this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
-      console.log(this.loginForm);
+      console.log(this.recordForm);
     }
   }
+
+  toggle_in() {
+    console.log("toggle in ", this.isSeConnecterIn,this.isSeConnecterUp);
+    this.isSeConnecterIn = false; 
+    this.isSeConnecterUp = true; 
+
+  }
+
+  toggle_up() {
+    console.log("toggle up ", this.isSeConnecterIn,this.isSeConnecterUp);
+    this.isSeConnecterIn = true; 
+    this.isSeConnecterUp = false;  
+  }
+
 
 }

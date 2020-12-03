@@ -22,15 +22,15 @@ export class LoginComponent implements OnInit {
   
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {
     this.recordForm = this.fb.group({
-      pseudo: [''],
-      mail: [''],
-      mdp: [''],
-      mdpConf: ['']
+      pseudoUp: [''],
+      mailUp: [''],
+      mdpUp: [''],
+      mdpConfUp: ['']
     });
 
     this.loginForm = this.fb.group({
-      pseudo: [''],
-      mdp: ['']
+      pseudoIn: [''],
+      mdpIn: ['']
     });
   }
 

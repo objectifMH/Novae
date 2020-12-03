@@ -54,7 +54,7 @@
       </li>
     </ul>
     <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
-      <a [routerLink]="['/login']" fragment="connection">SE CONNECTER</a>
+      <a [routerLink]="['/login']" fragment="connection" (click)="getShowMenu()">SE CONNECTER</a>
     </div>
 
   </div>

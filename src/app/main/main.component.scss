@@ -60,7 +60,8 @@ main {
     
     // DEBUT
     .debut {
-        background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../../assets/back_scott_light.jpg);
+        //background-image: linear-gradient(-360deg, #289bc22b, #279cc4a1), url(../../assets/back_scott_light.jpg);
+        background-image: url(../../assets/back_scott_light.jpg);
         height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -68,6 +69,7 @@ main {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
+        -ms-ie-background-size: cover;
         
         .container_debut {
             display: flex;
@@ -187,7 +189,8 @@ main {
     // CHIFFRES 
     .chiffres {
         height: 420px;
-        background-image: linear-gradient(-360deg, #289bc22b,  $color_dark), url(../../assets/chiffres_1.jpg);
+        //background-image: linear-gradient(-360deg, #289bc22b,  $color_dark), url(../../assets/chiffres_1.jpg);
+        background: url(../../assets/chiffres_1.jpg);
         min-height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
@@ -196,6 +199,7 @@ main {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
+        -ms-ie-background-size: cover;
 
         .chiffres_container {
             display: flex;
@@ -799,6 +803,8 @@ main {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
+        -ms-ie-background-size: cover;
+
         padding: 30px;
 
 
@@ -1316,6 +1322,11 @@ main {
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                -ms-ie-background-size: cover;
+
                 padding: 30px;
     
                 .testimonial_container {
@@ -1673,6 +1684,11 @@ main {
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                -ms-ie-background-size: cover;
+
                 padding: 30px;
     
                 .testimonial_container {

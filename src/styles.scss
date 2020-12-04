@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif !important;
 }
 
+.color_dark {
+    color: $color_dark !important;
+}
+
 .bg_linear_transparent {
     background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
     

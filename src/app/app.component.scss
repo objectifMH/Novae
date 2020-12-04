@@ -46,19 +46,23 @@ header {
 
 
     .logo {
-        font-size: 2em;
-            
-        color: $color_text;
-        font-weight: bold;
-        text-shadow: rgba(0,0,0,.75) 2px 2px; 
-        letter-spacing: 1px; 
-        // Pour l'animation : 
-        transform: translateX(-100em);
-        animation: slideIn .6s forwards;
-        animation-delay: 0.5s;
 
-        span {
-            color: $color_light;
+        a {
+            
+            font-size: 2em;
+                
+            color: $color_text;
+            font-weight: bold;
+            text-shadow: rgba(0,0,0,.75) 2px 2px; 
+            letter-spacing: 1px; 
+            // Pour l'animation : 
+            transform: translateX(-100em);
+            animation: slideIn .6s forwards;
+            animation-delay: 0.5s;
+
+            span {
+                color: $color_light;
+            }
         }
     }
 

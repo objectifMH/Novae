@@ -65,6 +65,9 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         
         .container_debut {
             display: flex;
@@ -189,6 +192,10 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
 
         .chiffres_container {
             display: flex;
@@ -787,6 +794,11 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         padding: 30px;
 
 
@@ -1009,12 +1021,16 @@ main {
                     color: #fafafa;
                     left: 0;
                     top: 0;
-                    font-size: 16px;
+                    font-size: 1.3em;
                     font-weight: 400;
                     padding: 5px 0;
                     pointer-events: none;
                     z-index: 500;
                     transition: 0.5s;
+                }
+
+                .span_value {
+                    margin-left: 25px;
                 }
 
                 .form-control:focus {
@@ -1023,7 +1039,7 @@ main {
             }
 
             .form-group.focus {
-                span {
+                .span_value {
                     transform: translateY(-18px);
                     color:#2c8498;
                     font-size: 1em;
@@ -1065,6 +1081,7 @@ main {
                 transition: 0.3s;
                 outline: none;
                 border-radius: 0px;
+                margin-left: 6px;
   
             }
 
@@ -1138,7 +1155,7 @@ main {
 
 // MEDIA QUERIES 
 
-@media screen and (min-width: 590px) {
+    @media screen and (min-width: 590px) {
 
     // CONTACTEZ
     .contactez {
@@ -1747,7 +1764,7 @@ main {
         }
     }
     
-    // FIN MEDIA QUERIES 
+// FIN MEDIA QUERIES 
     
     
     // ANIMATION 

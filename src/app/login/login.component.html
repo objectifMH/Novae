@@ -13,32 +13,47 @@
                             <input type="text" class="form-control" required formControlName="pseudoUp" id="pseudoUp" 
                                 (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorPseudo }">
-                            <span>
-                                Pseudo 
-                            </span>
+                            
+                                <span class="material-icons">
+                                    person
+                                </span>
+                                <span class="span_value">
+                                    Pseudo 
+                                </span>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" required formControlName="mailUp" email="true" 
                                 id="mailUp" (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorMail }">
-                            <span>
-                                E-mail
+                            
+                            <span class="material-icons">
+                                mail
+                            </span>
+                            <span class="span_value">
+                                E-mail 
                             </span>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" required formControlName="mdpUp" 
                                 id="mdpUp" (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorMdp }">
-                            <span>
+                            <span class="material-icons">
+                                vpn_key
+                            </span>
+                            <span class="span_value">
                                 Mot de passe
                             </span>
+
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" required formControlName="mdpConfUp" 
                                 id="mdpConfUp" (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorMdpConf }">
-                            <span>
-                                Confirmer
+                            <span class="material-icons">
+                                vpn_key
+                            </span>
+                            <span class="span_value">
+                                Confirmez
                             </span>
                         </div>
                         <div class="envoyer">
@@ -65,16 +80,23 @@
                             <input type="text" class="form-control" required formControlName="pseudoIn" id="pseudoIn" 
                                 (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorPseudo }">
-                            <span>Pseudo
-                            </span>
+                                <span class="material-icons">
+                                    person
+                                </span>
+                                <span class="span_value">
+                                    Pseudo 
+                                </span>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" required formControlName="mdpIn" 
                                 id="mdpIn" (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
                                 [ngClass]="{'errorForm': errorMdp }">
-                            <span class="">
-                                Mot de passe
-                            </span>
+                                <span class="material-icons">
+                                    vpn_key
+                                </span>
+                                <span class="span_value">
+                                    Mot de passe
+                                </span>
                         </div>
                         <div class="envoyer">
                             <button type="submit" class="btn" (click)="onSubmit()">Se connecter</button>

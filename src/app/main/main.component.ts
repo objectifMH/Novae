@@ -90,6 +90,11 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     AOS.init();
     this.plateforme = this.inout.getPlatform();
+    if (/iP(hone|od|ad)/.test(navigator.platform))
+    {
+      this.isIos = true; 
+      console.log(this.isIos, navigator.platform);
+    }
   }
 
   @HostListener('window:scroll', ['$event'])

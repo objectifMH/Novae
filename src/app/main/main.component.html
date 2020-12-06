@@ -1,16 +1,22 @@
 <!-- main  -->
 <main>
   <!-- debut  -->
-  <div class="debut" id="debut" [ngClass]="{'OS':isIos}">
+  <div class="debut" id="debut" [ngClass]="{'iOS':isIos}">
     <div class="container container_debut">
+      <div class="container_debut_grid">
+        <img src="assets/finance_debut.svg" alt="finance" />
+        <div class="grid_text">
+          <h1>
+            Avec Novae tout est carré, une&nbsp;vraie valeur ajoutée.
+            vous etes sur {{plateforme}}
+          </h1>
+          <button btn>
+            Rejoignez-nous
+          </button>
+        </div>
+      </div>
 
-      <h1>
-        Avec Novae tout est carré, une&nbsp;vraie valeur ajoutée.
-        vous etes sur {{plateforme}}
-      </h1>
-      <button btn>
-        Rejoignez-nous
-      </button>
+
     </div>
     <div class="scroll_container">
       <img src="assets/scrolldown-1.gif" class="scroll">
@@ -97,9 +103,9 @@
   <!-- fin missions  -->
 
   <!-- chiffres  -->
-  <div class="container-fluid chiffres bg_linear_light">
+  <div class="container-fluid chiffres bg_linear_light" [ngClass]="{'OS':isIos}">
     <div class="chiffres_container container">
-      <div class="chiffre" [ngClass]="{'OS':isIos}">
+      <div class="chiffre">
         <h3>
           + <span class="counter" data-count="1300">0</span>
         </h3>
@@ -706,7 +712,7 @@
   <!-- fin actus  -->
 
   <!-- testimonial  -->
-  <div class="testimonial  container-fluid " id="testimonial">
+  <div class="testimonial  container-fluid " id="testimonial" [ngClass]="{'iOS':isIos}">
     <div class="titre container ">
       <div class="titre_container ">
         <h2>Testimonial</h2>

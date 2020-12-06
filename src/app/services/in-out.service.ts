@@ -8,7 +8,7 @@ export class InOutService {
   constructor() { }
 
   getPlatform() {
-    console.log(navigator.platform);
+    console.log(navigator);
     return navigator.platform;
   }
 }

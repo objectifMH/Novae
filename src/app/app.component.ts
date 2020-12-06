@@ -139,6 +139,10 @@ export class AppComponent {
     this.firstMenuNav++;
   }
 
+  closeMenu() {
+    this.isShowMenu = false;
+  }
+
   // onFocusMethod(e) {
   //   e.srcElement.parentNode.classList.add("focus");
   // }

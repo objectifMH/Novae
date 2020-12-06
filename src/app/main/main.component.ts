@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { faFacebook, faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
+import { InOutService } from '../services/in-out.service';
 
 
 @Component({
@@ -67,14 +68,17 @@ export class MainComponent implements OnInit {
   }
 
   
+  isIos = false; 
+
   errorMail = false;
   errorNom = false;
   errorMessage = false;
   errorPrenom = false;
+  plateforme: string = ""; 
 
   contactForm: FormGroup;
   
-  constructor(private fb: FormBuilder, private httpClient: HttpClient) {
+  constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService) {
     this.contactForm = this.fb.group({
       nom: [''],
       prenom: [''],
@@ -85,6 +89,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     AOS.init();
+    this.plateforme = this.inout.getPlatform();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -115,9 +120,6 @@ export class MainComponent implements OnInit {
       })
 
     }
-
-
-
   }
 
   onFocusMethod(e) {

@@ -1,11 +1,12 @@
 <!-- main  -->
 <main>
   <!-- debut  -->
-  <div class="debut" id="debut">
+  <div class="debut" id="debut" [ngClass]="{'OS':isIos}">
     <div class="container container_debut">
 
       <h1>
         Avec Novae tout est carré, une&nbsp;vraie valeur ajoutée.
+        vous etes sur {{plateforme}}
       </h1>
       <button btn>
         Rejoignez-nous
@@ -98,7 +99,7 @@
   <!-- chiffres  -->
   <div class="container-fluid chiffres bg_linear_light">
     <div class="chiffres_container container">
-      <div class="chiffre">
+      <div class="chiffre" [ngClass]="{'OS':isIos}">
         <h3>
           + <span class="counter" data-count="1300">0</span>
         </h3>

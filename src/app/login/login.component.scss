@@ -3,7 +3,7 @@
 section {
     min-height: 100vh;
     background-color: #0fb5d840;
-    padding: 80px 0px 60px;
+    padding: 80px 0px 0px;
     border-bottom: 0.125rem solid rgba(0, 0, 0, 0.35);
 
     .container-fluid {
@@ -77,7 +77,7 @@ section {
                             top: 0;
                             font-size: 1.2em;
                             font-weight: 400;
-                            padding: 5px 0;
+                            padding: 6px 47px;
                             pointer-events: none;
                             z-index: 500;
                             transition: 0.5s;
@@ -122,7 +122,7 @@ section {
                     }
         
                     input, textarea {
-                        width: 100%;
+                        width: 75%;
                         outline: none;
                         border: none;
                         border-bottom: 2px solid #fafafa;
@@ -135,7 +135,7 @@ section {
                         transition: 0.3s;
                         outline: none;
                         border-radius: 0px;
-                        margin-left: 6px;            
+                        margin: 6px auto;            
                     }
         
                     textarea {
@@ -224,6 +224,8 @@ section {
                 p {
                     transition: 1s ease-in-out;
                     transition-delay: 0.2s;
+                    font-size: 1rem;
+                    font-weight: bold;
                 }
             }
 
@@ -250,21 +252,23 @@ section {
                 transition: 1s ease-in-out;
                 transition-delay: 0.4s;
                 z-index: 100;
+                margin-top: 25px;
             }
 
             .img.sign-in img {
-                width: 42vw;
+                //width: 42vw;
+                width: 30vw;    
                 bottom: 0;
                 left: 0;
             }
 
             .img.sign-up img {
-                width: 34vw;
+                //width: 34vw;
+                width: 30vw;
                 top: 0%;
                 right: 10%;
             }       
         }
-
 
         // BACKGROUND //
         &::before {
@@ -357,26 +361,25 @@ section {
 
 @media only screen and (max-width: 567px) {
     .container-fluid::before, .container-fluid.sign-in::before, .container-fluid.sign-up::before {
-        height: 100vh !important;
-        border-bottom-left-radius: 0 !important;
-        border-top-left-radius: 0 !important;
-        z-index: 0 !important;
-        transform: none !important;
-        right: 0 !important;
-        background-color: #0fb5d840 !important;
+        // height: 100vh !important;
+        // border-bottom-left-radius: 0 !important;
+        // border-top-left-radius: 0 !important;
+        // z-index: 0 !important;
+        // transform: none !important;
+        // right: 0 !important;
+        // background-color: #0fb5d840 !important;
+        // background-color: orange;
+        
+        // background-image: linear-gradient(-45deg, green 0%, white 100%) !important;
         display: none;
-        //background-image: linear-gradient(-45deg, green 0%, white 100%) !important;
     }
 
     .container-fluid.sign-in .col.sign-in {
         transform: translateY(-10%) !important;
-        //border:  33px solid green !important;
     }
 
-    .container-fluid.sign-up .col.sing-up {
-        background: purple !important;
-        border:  33px solid purple !important;
-        transform: translateY(-2%) !important;
+    .container-fluid.sign-up .col.sign-up {
+        transform: translateY(0%) !important;
     }
 
     .content-row {
@@ -386,21 +389,42 @@ section {
 
     .content-row .col {
 
-        transform: translate(5%, -390%) !important;
+        transform: translate(0%, -380%) !important;
         background-color: unset !important;
         height: 20% !important;
         padding: 0 !important;
     }
 
-    .col {
+    .col.sign-in {
         width: 100% !important;
         position: absolute !important;
-        padding: 2rem !important;
+        padding: 1rem !important;
         background-color: $color-dark !important;
         border-top-left-radius: 2rem !important;
         border-top-right-radius: 2rem !important;
-        //transform: translateY(100%) !important;
+        transform: translateY(100%);
         transition: 1s ease-in-out !important;
+    }
+
+    .col.sign-up {
+        width: 100% !important;
+        position: absolute !important;
+        padding: 1rem !important;
+        padding: 1rem 1rem 3.8rem;
+        background-color: $color-dark !important;
+        border-top-left-radius: 2rem !important;
+        border-top-right-radius: 2rem !important;
+        transform: translateY(100%);
+        transition: 1s ease-in-out !important;
+    }
+
+    
+    .container-fluid.sign-in .col.sign-in {
+        transform: translateY(0%) !important;
+    }
+
+    .container-fluid.sign-up .col.sing-up {
+        transform: translateY(0) !important;
     }
 
     .row {
@@ -414,14 +438,12 @@ section {
         //padding: 0 !important;
     }
 
-    .form.sign-up {
-        transform: translateY(35%);
-        //background: red !important;
+    .container-fluid.sign-up .form.sign-up {
+        transform: translateY(10%) scale(1) !important ;
     }
 
-    .form.sign-in {
-        transform: translateY(-35%);
-        //background: orange !important;
+    .container-fluid.sign-in .form.sign-in {
+        transform: translateY(-35%) scale(1) !important;
     }
 
     .text {
@@ -436,7 +458,6 @@ section {
             font-size: 2rem !important;
             color: white !important;
             letter-spacing: normal;
-
         }
 
         .img {
@@ -448,5 +469,7 @@ section {
         left: -10% !important;
         max-width: 100% !important;
     }
+
+    
 }
 

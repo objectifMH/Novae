@@ -9,6 +9,7 @@
             <div class="col align-center flex-col sign-up">
                 <div class="form-wrapper align-center">
                     <form [formGroup]="recordForm" class="form sign-up">
+                        
                         <div class="form-group">
                             <input type="text" class="form-control" required formControlName="pseudoUp" id="pseudoUp" 
                                 (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
@@ -76,6 +77,7 @@
             <div class="col align-center flex-col sign-in">
                 <div class="form-wrapper align-center">
                     <form [formGroup]="loginForm" class="form sign-in">
+                        
                         <div class="form-group nom ">
                             <input type="text" class="form-control" required formControlName="pseudoIn" id="pseudoIn" 
                                 (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
@@ -121,10 +123,10 @@
             <div class="col align-center flex-col ">
                 <div class="text sign-in">
                     <h2>
-                        De retour ! 
+                        De retour! 
                     </h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed, quidem architecto autem quo accusamus exercitationem assumenda quibusdam.
+                        C'est un plaisir de vous revoir, connectez-vous qu'on puisse avancer ensemble!
                     </p>
                     <div class="img sign-in">
                         <img src="assets/signup.svg" alt=""/>
@@ -140,10 +142,10 @@
                 <div class="text sign-up">
                     
                     <h2 class="color_dark ">
-                        Nous rejoindre ! 
+                        Nous rejoindre! 
                     </h2>
                     <p class="color_dark ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed, quidem architecto autem quo accusamus exercitationem assumenda quibusdam.
+                        Avec Novae votre comptable tout le temps avec vous pour vous faciliter dans vos projets!
                     </p>
                     <div class="img sign-up">
                         <img src="assets/signin.svg" alt=""/>

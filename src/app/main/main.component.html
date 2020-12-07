@@ -4,13 +4,13 @@
   <div class="debut" id="debut" [ngClass]="{'iOS':isIos}">
     <div class="container container_debut">
       <div class="container_debut_grid">
-        <img src="assets/finance.svg" alt="finance" />
-        <div class="grid_text">
+        <img src="assets/finance.svg" alt="finance" data-aos="fade-right" data-aos-duration="2000"/>
+        <div class="grid_text" data-aos="fade-left" data-aos-duration="2000">
           <h1>
-            Avec Novae tout est carré, une&nbsp;vraie valeur ajoutée.
+            Avec Novae tout est carré, le top en comtpabilité.
           </h1>
           <button btn>
-            Rejoignez-nous
+            <a [routerLink]="['/login']" fragment="container">Rejoignez-nous</a>    
           </button>
         </div>
       </div>
@@ -168,7 +168,8 @@
         Des&nbsp;questions sur votre fiscalité ? Une&nbsp;demande de&nbsp;devis !
       </h4>
       <button btn>
-        Contactez-nous
+        <a [routerLink]="['/main']" fragment="contacter">        Contactez-nous
+        </a>    
       </button>
     </div>
   </div>

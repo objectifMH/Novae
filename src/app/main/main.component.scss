@@ -122,6 +122,10 @@ main {
                     display: block;
                     /* margin-top: 40px; */
                     margin: 5px auto 0px;
+
+                    a {
+                        color: $color-text;
+                    }
     
                     &:hover {
                         transform: translateY(-5px);
@@ -352,6 +356,10 @@ main {
                 padding-bottom: 14px!important;
                 padding-left: 38px!important;
                 transition: 0.3s ease-in-out;
+
+                a {
+                    color: $color-text;
+                }
 
                 &:hover {
                     transform: translateY(-5px);

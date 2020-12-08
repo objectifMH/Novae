@@ -1,6 +1,10 @@
+import { NumberSymbol } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { InOutService } from '../services/in-out.service';
+import { mdpValidator } from './validators';
 
 @Component({
   selector: 'app-login',
@@ -17,21 +21,34 @@ export class LoginComponent implements OnInit {
   errorMdp = false;
   errorMdpConf = false;
 
-  isSeConnecterIn = false; 
-  isSeConnecterUp = true; 
-  
-  constructor(private fb: FormBuilder, private httpClient: HttpClient) {
+  errorPseudoIn = false;
+  errorMdpIn = false;
+
+  isSeConnecterIn = false;
+  isSeConnecterUp = true;
+
+  isPseudoExisting = false;
+  isAuthenticated = false;
+  isRecording = false;
+  personAuthenticated = {pseudo : "", mdp: "", role: "USER" };
+
+  constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService, private router: Router) {
     this.recordForm = this.fb.group({
       pseudoUp: [''],
       mailUp: [''],
-      mdpUp: [''],
-      mdpConfUp: ['']
+      mdpUp: ['', Validators.minLength(4)],
+      mdpConfUp: ['', mdpValidator]
     });
 
     this.loginForm = this.fb.group({
       pseudoIn: [''],
       mdpIn: ['']
     });
+
+    //si on change le mdp on update l'état de la confirmation : 
+    this.recordForm.controls.mdpUp.valueChanges.subscribe(
+      x => this.recordForm.controls.mdpConfUp.updateValueAndValidity()
+    );
   }
 
   ngOnInit(): void {
@@ -46,74 +63,102 @@ export class LoginComponent implements OnInit {
     if (this.recordForm.value[attr] === "")
       e.srcElement.parentNode.classList.remove("focus");
 
-      let attr_login = e.target.id;
+    let attr_login = e.target.id;
     if (this.loginForm.value[attr_login] === "")
       e.srcElement.parentNode.classList.remove("focus");
   }
 
-  onSubmit() {
+  onSubmitRecord() {
+    this.errorPseudo = false;
     if (this.recordForm.valid) {
-      console.log(this.recordForm);
-      let message =  this.recordForm.value.message + "\n Envoyé de Novae. ";
-      
 
       let formData = new FormData();
-      formData.append("pseudo", this.recordForm.value.pseudo);
-      formData.append("mail", this.recordForm.value.mail);
-      formData.append("mdp", this.recordForm.value.mdp);
+      formData.append("pseudo", this.recordForm.value.pseudoUp);
+      formData.append("mail", this.recordForm.value.mailUp);
+      formData.append("mdp", this.recordForm.value.mdpUp);
 
+      let recording = this.inout.getRecord(formData);
+      if (recording === false) {
 
-      this.httpClient.post("https://formspree.io/f/mknpvgjd", formData).subscribe(
-        response => {
-          // this.errorMail = this.contactForm.controls.mail.status === "VALID" ? false : true;
-          // this.errorMessage = this.contactForm.controls.message.status === "VALID" ? false : true;
-          // this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
-          // this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
+        this.isRecording = true;
+        this.isPseudoExisting = false;
 
-          // this.toastr.success(this.contactForm.value.nom + ", Votre message a bien été envoyé ", "Message", {
-          //   timeOut: 1800,
-          //   progressBar: true,
-          //   progressAnimation: 'increasing'
-          // })
+        setTimeout(() => {
 
-          this.recordForm = this.fb.group({
-            pseudo: [''],
-            mail: [''],
-            mdp: [''],
-            mdpConf: ['']
-          });
-
+          // les spans reviennent au niveau du placeholder
           let form_inputs = document.querySelectorAll('.form-group');
-          form_inputs.forEach(element => { 
+          form_inputs.forEach(element => {
             element.classList.remove("focus");
           });
 
-        },
-        error => {
-          console.log(error);
-        }
-      );
+          // on remet à 0 les inputs du formulaire 
+            this.recordForm.reset();
+            
+        }, 4000)
+      }
+      else {
+        //console.log("Dans On submit Record : pseudo pas disponible", recording, this.recordForm.get('pseudoUp') );
+        this.isPseudoExisting = true;
+        this.errorPseudo = true;
+        this.isRecording = false;
+      }
     }
     else {
-      // this.errorMail = this.contactForm.controls.mail.status === "VALID" ? false : true;
-      // this.errorMessage = this.contactForm.controls.message.status === "VALID" ? false : true;
-      // this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
-      // this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
-      console.log(this.recordForm);
+      this.isPseudoExisting = false;
+      this.isRecording = false;
+      this.recordForm.markAllAsTouched();
     }
   }
 
+  onSubmitLogin() {
+    this.isAuthenticated = false;
+    this.errorPseudoIn = false;
+    this.errorMdpIn = false;
+
+    if (this.loginForm.valid) {
+      //console.log(this.loginForm);
+
+      let formData = new FormData();
+      formData.append("pseudo", this.loginForm.value.pseudoIn);
+      formData.append("mdp", this.loginForm.value.mdpIn);
+
+      this.isAuthenticated = this.inout.getLogin(formData);
+      if (this.isAuthenticated) {
+        // let form_inputs = document.querySelectorAll('.form-group');
+        // form_inputs.forEach(element => {
+        //   element.classList.remove("focus");
+        // });
+        this.personAuthenticated = this.inout.getLoginAuthenticated();
+        setTimeout( () => {
+          this.router.navigate(['/profil']);
+        }, 2500)
+      }
+      else {
+      this.errorPseudoIn = true;
+      this.errorMdpIn = true;
+      }
+    }
+    else {
+      this.loginForm.markAllAsTouched();
+    }
+
+  }
+
   toggle_in() {
-    console.log("toggle in ", this.isSeConnecterIn,this.isSeConnecterUp);
-    this.isSeConnecterIn = false; 
-    this.isSeConnecterUp = true; 
+    console.log("toggle in ", this.isSeConnecterIn, this.isSeConnecterUp);
+    this.isSeConnecterIn = false;
+    this.isSeConnecterUp = true;
+    this.recordForm.reset();
+    this.loginForm.reset();
 
   }
 
   toggle_up() {
-    console.log("toggle up ", this.isSeConnecterIn,this.isSeConnecterUp);
-    this.isSeConnecterIn = true; 
-    this.isSeConnecterUp = false;  
+    console.log("toggle up ", this.isSeConnecterIn, this.isSeConnecterUp);
+    this.isSeConnecterIn = true;
+    this.isSeConnecterUp = false;
+    this.recordForm.reset();
+    this.loginForm.reset();
   }
 
 

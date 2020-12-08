@@ -57,9 +57,16 @@
                                 Confirmez
                             </span>
                         </div>
-                        <div class="envoyer">
-                            <button type="submit" class="btn" (click)="onSubmit()">S'enregistrer</button>
+                        <div class="alert alert-danger" role="alert" *ngIf="isPseudoExisting">
+                            Votre pseudo est pas disponible,&nbsp;veuillez en choisir un autre.
                         </div>
+                        <div class="alert alert-success" role="alert" *ngIf="isRecording" >
+                            Votre enregistrement a été pris en compte.
+                          </div>
+                        <div class="envoyer">
+                            <button type="submit" class="btn" (click)="onSubmitRecord()">S'enregistrer</button>
+                        </div>
+                        
                         <p>
                             <span>Vous avez déja un compte ? </span>
                             <b  id="seConnecter" 
@@ -81,7 +88,7 @@
                         <div class="form-group nom ">
                             <input type="text" class="form-control" required formControlName="pseudoIn" id="pseudoIn" 
                                 (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
-                                [ngClass]="{'errorForm': errorPseudo }">
+                                [ngClass]="{'errorForm': errorPseudoIn }">
                                 <span class="material-icons">
                                     person
                                 </span>
@@ -89,10 +96,10 @@
                                     Pseudo 
                                 </span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <input type="password" class="form-control" required formControlName="mdpIn" 
                                 id="mdpIn" (blur)="onBlurMethod($event)" (focus)="onFocusMethod($event)"
-                                [ngClass]="{'errorForm': errorMdp }">
+                                [ngClass]="{'errorForm': errorMdpIn }">
                                 <span class="material-icons">
                                     vpn_key
                                 </span>
@@ -100,9 +107,21 @@
                                     Mot de passe
                                 </span>
                         </div>
-                        <div class="envoyer">
-                            <button type="submit" class="btn" (click)="onSubmit()">Se connecter</button>
+                        <div class="alert alert-danger" role="alert" *ngIf="errorPseudoIn  && errorMdpIn">
+                            Votre pseudo ou mot de passe est inccorect.
                         </div>
+                        <div class="alert alert-info alert-dismissible container mt-5" *ngIf="isAuthenticated">
+                            <span> Bonjour {{personAuthenticated.pseudo}}, Vous allez être connécté !</span>
+                            <div class="d-flex justify-content-center mt-5 mb-2">
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="sr-only">Chargement...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="envoyer">
+                            <button type="submit" class="btn" (click)="onSubmitLogin()">Se connecter</button>
+                        </div>
+                        
                         <p>
                             <span>Vous avez pas de compte ? </span>
                             <b  id="sEnregistrer"

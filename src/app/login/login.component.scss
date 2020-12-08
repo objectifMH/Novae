@@ -337,6 +337,23 @@ section {
             right: 50%;
         }
     }
+
+    input.ng-touched.ng-invalid {
+        border-width: 1px;
+        border-bottom: red solid 2px !important;
+        color: red !important; 
+    }
+
+    input.ng-touched.ng-valid {
+        border-width: 1px;
+        border-bottom: $color-text solid 2px !important;
+        color: $color-text !important; 
+    }
+
+    .alert {
+        width: 75%;
+        margin: 0px auto;
+    }
 }
 
 // MEDIA QUERIES 
@@ -398,7 +415,7 @@ section {
     .col.sign-in {
         width: 100% !important;
         position: absolute !important;
-        padding: 1rem !important;
+        padding: 1rem 1rem 5rem !important;
         background-color: $color-dark !important;
         border-top-left-radius: 2rem !important;
         border-top-right-radius: 2rem !important;
@@ -409,8 +426,7 @@ section {
     .col.sign-up {
         width: 100% !important;
         position: absolute !important;
-        padding: 1rem !important;
-        padding: 1rem 1rem 3.8rem;
+        padding: 1rem 1rem 1.8rem;
         background-color: $color-dark !important;
         border-top-left-radius: 2rem !important;
         border-top-right-radius: 2rem !important;

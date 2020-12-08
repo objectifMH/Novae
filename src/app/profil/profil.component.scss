@@ -1,0 +1,17 @@
+@import '../../styles.scss';
+
+section {
+    min-height: 100vh;
+    background-color:orange;
+    padding: 80px 0px 0px;
+    border-bottom: 0.125rem solid rgba(0, 0, 0, 0.35);
+
+    h2 {
+        color: white;
+        font-size: 4.5em;
+        line-height: 1em;
+        font-weight: bolder;
+        padding: 1em 2em;
+
+    }
+}

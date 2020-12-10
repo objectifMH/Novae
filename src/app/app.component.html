@@ -28,7 +28,8 @@
   </div>
   <div class="droite">
     <div class="connecter">
-      <a [routerLink]="['/login']" fragment="">SE CONNECTER</a>
+      <a [routerLink]="['/login']" fragment="" *ngIf="!isAuthenticated">SE CONNECTER</a>
+      <a [routerLink]="['/profil']" fragment="" *ngIf="isAuthenticated" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
     </div>
     <div class="menu">
       <span class="material-icons icon_menu"
@@ -57,7 +58,8 @@
       </li>
     </ul>
     <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
-      <a [routerLink]="['/login']" fragment="connection" (click)="getShowMenu()">SE CONNECTER</a>
+      <a [routerLink]="['/login']" fragment="connection" *ngIf="!isAuthenticated" (click)="getShowMenu()">SE CONNECTER</a>
+      <a [routerLink]="['/profil']" fragment="" *ngIf="isAuthenticated" (click)="getShowMenu()" class="bg_transparent">{{profilAuthenticated.pseudo}}</a>
     </div>
 
   </div>

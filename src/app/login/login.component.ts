@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   isPseudoExisting = false;
   isAuthenticated = false;
   isRecording = false;
-  personAuthenticated = {pseudo : "", mdp: "", role: "USER" };
+  profilAuthenticated = { pseudo: "", mdp: "", role: "USER", mail:"" };
 
   constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService, private router: Router) {
     this.recordForm = this.fb.group({
@@ -52,6 +52,39 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // est ce qu'on est authentifié ? 
+    this.getIsAuthenticated();
+
+    // qui est authentifié ?
+    this.getLoginAuthenticated();
+  }
+
+  getIsAuthenticated() {
+    this.inout.getIsAuthenticated().subscribe(
+      success => {
+        this.isAuthenticated = success;
+
+        if (success === true) {
+          setTimeout(() => {
+            this.router.navigate(['/profil']);
+          }, 2500)
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getLoginAuthenticated() {
+    this.inout.getProfilAuthenticated().subscribe(
+      success => {
+        this.profilAuthenticated = success;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   onFocusMethod(e) {
@@ -92,8 +125,8 @@ export class LoginComponent implements OnInit {
           });
 
           // on remet à 0 les inputs du formulaire 
-            this.recordForm.reset();
-            
+          this.recordForm.reset();
+
         }, 4000)
       }
       else {
@@ -111,37 +144,26 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin() {
-    this.isAuthenticated = false;
     this.errorPseudoIn = false;
     this.errorMdpIn = false;
 
-    if (this.loginForm.valid) {
-      //console.log(this.loginForm);
+    if (this.loginForm.status === "VALID") {
 
       let formData = new FormData();
       formData.append("pseudo", this.loginForm.value.pseudoIn);
       formData.append("mdp", this.loginForm.value.mdpIn);
 
-      this.isAuthenticated = this.inout.getLogin(formData);
-      if (this.isAuthenticated) {
-        // let form_inputs = document.querySelectorAll('.form-group');
-        // form_inputs.forEach(element => {
-        //   element.classList.remove("focus");
-        // });
-        this.personAuthenticated = this.inout.getLoginAuthenticated();
-        setTimeout( () => {
-          this.router.navigate(['/profil']);
-        }, 2500)
-      }
-      else {
-      this.errorPseudoIn = true;
-      this.errorMdpIn = true;
+      let res = this.inout.getLogin(formData);
+
+      if (res["source"]["_value"] === false) {
+        console.log("ON est rentrer dedans");
+        this.errorPseudoIn = true;
+        this.errorMdpIn = true;
       }
     }
     else {
       this.loginForm.markAllAsTouched();
     }
-
   }
 
   toggle_in() {

@@ -82,6 +82,9 @@ export class AppComponent {
   plateforme="";
   isIos= true;
 
+  isAuthenticated;
+  profilAuthenticated;
+
   contactForm: FormGroup;
   
   constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService) {
@@ -95,6 +98,8 @@ export class AppComponent {
 
   ngOnInit() {
     AOS.init();
+    this.getIsAuthenticated();
+    this.getLoginAuthenticated();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -117,6 +122,30 @@ export class AppComponent {
 
   closeMenu() {
     this.isShowMenu = false;
+  }
+
+  getIsAuthenticated() {
+    this.inout.getIsAuthenticated().subscribe(
+      success => {
+        setTimeout(() => {
+          this.isAuthenticated = success;
+        }, 2500)
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getLoginAuthenticated() {
+    this.inout.getProfilAuthenticated().subscribe(
+      success => {
+        this.profilAuthenticated = success;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   

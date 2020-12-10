@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InOutService } from '../services/in-out.service';
 
 @Component({
   selector: 'app-profil',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.scss']
 })
 export class ProfilComponent implements OnInit {
+  
+  profilAuthenticated: any;
 
-  constructor() { }
+  constructor(private inout: InOutService) { }
 
   ngOnInit(): void {
+    this.getLoginAuthenticated();
+  }
+
+  getLoginAuthenticated() {
+    this.inout.getProfilAuthenticated().subscribe(
+      success => {
+        this.profilAuthenticated = success;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }

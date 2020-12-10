@@ -51,8 +51,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg_linear_transparent {
-    background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
-    
+    background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%); 
+}
+
+.bg_transparent {
+    background: rgba(0, 0, 0, 0.12) !important;
 }
 
 .bg_linear {

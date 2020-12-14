@@ -39,8 +39,11 @@ export class ProfilComponent implements OnInit {
   }
 
   deconnexion() {
-    this.inout.setIsAutenticated(false);
-    this.inout.setProfilAuthenticated({pseudo : "", mdp: "", role: "USER", mail:"" })
+    if (confirm('Etes-vous sûr(e) de vouloir vous deconnecter, ' + this.profilAuthenticated.pseudo.charAt(0).toUpperCase()+this.profilAuthenticated.pseudo.substr(1) + ' !')) {
+      
+      this.inout.setIsAutenticated(false);
+      this.inout.setProfilAuthenticated({pseudo : "", mdp: "", role: "USER", mail:"" })
+    }
   }
 
 }

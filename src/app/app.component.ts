@@ -105,6 +105,7 @@ export class AppComponent {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.inout.setIsProfil(false);
+        console.log("app", this.isProfil);
       }
     });
 
@@ -115,13 +116,13 @@ export class AppComponent {
     AOS.init();
     this.getIsAuthenticated();
     this.getLoginAuthenticated();
-    this.inout.setIsProfil(false);
+    //this.inout.setIsProfil(false);
     this.getIsProfil();
   }
 
-  ngAfterContentChecked(): void {
-    this.cdRef.detectChanges();
-  }
+  // ngAfterContentChecked(): void {
+  //   this.cdRef.detectChanges();
+  // }
 
   getIsProfil() {
     this.inout.getIsProfil().subscribe(

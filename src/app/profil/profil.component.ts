@@ -16,8 +16,9 @@ export class ProfilComponent implements OnInit {
 
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (val.url === '/profil')
+        if (val.url.slice(0,7) === '/profil')
         this.inout.setIsProfil(true);
+        console.log("profil",val.url.slice(0,7));
       }
     });
   }

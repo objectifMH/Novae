@@ -127,6 +127,11 @@ export class LoginComponent implements OnInit {
           // on remet à 0 les inputs du formulaire 
           this.recordForm.reset();
 
+          this.isSeConnecterIn = true;
+          this.isSeConnecterUp = false;
+          this.recordForm.reset();
+          this.loginForm.reset();
+
         }, 4000)
       }
       else {

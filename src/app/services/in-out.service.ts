@@ -15,10 +15,13 @@ export class InOutService {
 
   profilAuthenticated: BehaviorSubject<any>;
   isAuthenticated: BehaviorSubject<boolean>;
+  isProfil: BehaviorSubject<boolean>;
 
   constructor() { 
     this.profilAuthenticated = new BehaviorSubject<any>({pseudo : "", mdp: "", role: "USER", mail:"" });
     this.isAuthenticated = new BehaviorSubject<boolean>(false);
+    this.isProfil = new BehaviorSubject<boolean>(false);
+
   }
 
   getPlatform() {
@@ -68,5 +71,13 @@ export class InOutService {
 
   public getIsAuthenticated() {
     return this.isAuthenticated.asObservable();
+  }
+
+  public setIsProfil(resultat) {
+    this.isProfil.next(resultat);
+  }
+
+  public getIsProfil() {
+    return this.isProfil.asObservable();
   }
 }

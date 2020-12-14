@@ -14,6 +14,7 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLoginAuthenticated();
+    this.inout.setIsProfil(true);
   }
 
   getLoginAuthenticated() {
@@ -25,6 +26,11 @@ export class ProfilComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  deconnexion() {
+    this.inout.setIsAutenticated(false);
+    this.inout.setProfilAuthenticated({pseudo : "", mdp: "", role: "USER", mail:"" })
   }
 
 }

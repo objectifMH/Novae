@@ -1,5 +1,5 @@
 <!-- header  -->
-<header *ngIf="isAuthenticated">
+<header *ngIf="!isProfil">
   <div class="logo">
     
     <a [routerLink]="['/main']" fragment="debut" (click)="closeMenu()">
@@ -59,7 +59,7 @@
     </ul>
     <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
       <a [routerLink]="['/login']" fragment="connection" *ngIf="!isAuthenticated" (click)="getShowMenu()">SE CONNECTER</a>
-      <a [routerLink]="['/profil']" fragment="" *ngIf="isAuthenticated" (click)="getShowMenu()" class="bg_transparent">{{profilAuthenticated.pseudo}}</a>
+      <a [routerLink]="['/profil']" fragment="" *ngIf="isAuthenticated" (click)="getShowMenu()" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
     </div>
 
   </div>
@@ -70,7 +70,7 @@
 </div>
 
 <!-- footer  -->
-<footer class="container-fluid" *ngIf="isAuthenticated">
+<footer class="container-fluid" *ngIf="!isProfil">
   <div class="container footer">
     <div class="footer_item">
       <div class="logo">

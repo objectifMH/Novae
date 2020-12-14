@@ -121,7 +121,7 @@ main {
                     transition: 0.3s ease-in-out;
                     display: block;
                     /* margin-top: 40px; */
-                    margin: 5px auto 0px;
+                    margin: 25px auto 0px;
 
                     a {
                         color: $color-text;
@@ -1651,6 +1651,11 @@ main {
             
                         img {
                             width: 53%;
+                        }
+
+                        button {
+                            margin: 0px auto;
+                            //background: red;
                         }
                     }
                 }

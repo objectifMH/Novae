@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { isNgContainer } from '@angular/compiler';
+import { ChangeDetectorRef } from '@angular/core';
 import { Component, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { counter } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faLinkedinIn, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import * as AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { InOutService } from './services/in-out.service';
 
 @Component({
@@ -73,45 +76,75 @@ export class AppComponent {
   //   nav: false
   // }
 
-  
+
   errorMail = false;
   errorNom = false;
   errorMessage = false;
   errorPrenom = false;
 
-  plateforme="";
-  isIos= true;
+  plateforme = "";
+  isIos = true;
 
   isAuthenticated;
   profilAuthenticated;
+  isProfil = false;
 
   contactForm: FormGroup;
-  
-  constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService) {
+
+  constructor(private fb: FormBuilder, private httpClient: HttpClient,
+    private cdRef: ChangeDetectorRef,
+    private route: ActivatedRoute, private router: Router,
+    private inout: InOutService) {
     this.contactForm = this.fb.group({
       nom: [''],
       prenom: [''],
       mail: [''],
       message: ['']
     });
+
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.inout.setIsProfil(false);
+      }
+    });
+
+    
   }
 
   ngOnInit() {
     AOS.init();
     this.getIsAuthenticated();
     this.getLoginAuthenticated();
+    
+    this.getIsProfil();
+  }
+
+  ngAfterContentChecked(): void {
+    this.cdRef.detectChanges();
+  }
+
+  getIsProfil() {
+    this.inout.getIsProfil().subscribe(
+      success => {
+        console.log(success);
+        this.isProfil = success;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     let header = document.querySelector('header');
     // let chiffres = document.querySelector('.chiffres');
-
-    if (window.pageYOffset > header.clientHeight) {
-      header.classList.add('opacity_true');
-    } else {
-      header.classList.remove('opacity_true');
-    }
+    if (header)
+      if (window.pageYOffset > header.clientHeight) {
+        header.classList.add('opacity_true');
+      } else {
+        header.classList.remove('opacity_true');
+      }
   }
 
   getShowMenu() {
@@ -148,7 +181,7 @@ export class AppComponent {
     )
   }
 
-  
+
 
 
 

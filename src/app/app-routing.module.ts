@@ -9,8 +9,8 @@ import { ProfilComponent } from './profil/profil.component';
 const routes: Routes = [
   {path: "main", component: MainComponent},
   {path: "login", component: LoginComponent},
-  {path: "profil", component: ProfilComponent},
-  //{path: "profil", component: ProfilComponent, canActivate: [AuthGuard]},
+  //{path: "profil", component: ProfilComponent},
+  {path: "profil", component: ProfilComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: '/main' },
 ];
 

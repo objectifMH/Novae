@@ -1,10 +1,8 @@
-<section>
-    <!-- <h2>Bonjour, Bienvenu sur votre profil !</h2> -->
-
+<!-- <section class="section">
     <div class="container">
         <div class="card">
             <div class="header">
-                
+
                 <a href="#" class="mail">
                     <span class="material-icons">
                         mail
@@ -23,6 +21,324 @@
                 </div>
             </div>
         </div>
-
     </div>
-</section>
+</section> -->
+
+
+<!-- GAUCHE NAV  -->
+<input type="checkbox" id="sidebar-toggle">
+<div class="sidebar">
+    <!-- NOVAE LOGO  -->
+    
+    <div class="sidebar-header">
+        <div class=" brand logo">
+            <a [routerLink]="['/main']" fragment="debut">
+              NO<span>V</span>AE
+            </a>
+            <label for="sidebar-toggle">
+                <span class="material-icons">
+                    menu_open
+                </span>
+            </label>
+            
+            
+          </div>
+        <span class="ti-menu-alt"></span>
+    </div>
+    <!-- FIN NOVAE LOGO  -->
+
+    <!-- SIDEBAR  -->
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <a href="">
+                    <span class="material-icons">
+                        home
+                    </span>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                    <span>Paramètres</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="material-icons">
+                        people
+                    </span>
+                    <span>Team Novae</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="material-icons">
+                        today
+                    </span>
+                    <span>Taches</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="material-icons">
+                        exit_to_app
+                    </span>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- FIN SIDEBAR  -->
+</div>
+<!-- FIN GAUCHE NAV  -->
+
+
+<!-- CENTRE  -->
+<div class="main-content">
+
+    <!-- HEADER  -->
+    <header>
+        <div class="search-wrapper">
+            <span class="material-icons">
+                search
+            </span>
+            <input type="search" placeholder="Recherche">
+        </div>
+        <div class="social-icons">
+            <span class="material-icons">
+                notifications_none
+            </span>
+            <span class="material-icons">
+                comment
+            </span>
+            <div></div>
+        </div>
+    </header>
+    <!-- FIN HEADER  -->
+
+    <!-- MAIN  -->
+    <main>
+        <!-- titre  -->
+        <h2 class="dash-title">
+            Bonjour Motoko !
+            <!-- @{{profilAuthenticated.pseudo}} ! -->
+        </h2>
+        <!-- fin titre  -->
+        <!-- CARDS  -->
+        <div class="dash-cards">
+            <div class="card_single">
+                <div class="card_body">
+                    <span class="material-icons">
+                        today
+                    </span>
+                    <div>
+                        <h5>Dernier Rendez-vous</h5>
+                        <h4>15 Aout, 2020</h4>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href=""> Voir plus</a>
+                </div>             
+            </div>
+
+            <div class="card_single">
+                <div class="card_body">
+                    <span class="material-icons">
+                        euro
+                    </span>
+                    <div>
+                        <h5>Solde du Compte</h5>
+                        <h4>21 340€</h4>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href=""> Voir plus</a>
+                </div>             
+            </div>
+
+            <div class="card_single">
+                <div class="card_body">
+                    <span class="">
+                        87%
+                    </span>
+                    <div>
+                        <h5>Audit</h5>
+                        <h4>Déb. 12 jan, 2019</h4>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href=""> Voir plus</a>
+                </div>             
+            </div>
+            
+        </div>
+        <!-- FIN CARDS  -->
+
+        <!-- RECENT -->
+        <section class="recent">
+            <div class="activity-grid">
+
+                <!--  -->
+                <div class="activity-card">
+                    <h3>Activité récente</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Projet</th>
+                                <th>Date déb.</th>
+                                <th>Date fin</th>
+                                <th>Equipe</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Audit</td>
+                                <td>5 Aout, 2020</td>
+                                <td>12 Sept, 2020</td>
+                                <td class="td-team">
+                                    
+                                    <div class="img-3"></div>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">
+                                        Succès
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fiscalité</td>
+                                <td>11 Janv, 2020</td>
+                                <td>14 Oct, 2020</td>
+                                <td class="td-team">
+                                    <div class="img-1"></div>
+                                    <div class="img-2"></div>
+                                    <div class="img-3"></div>
+                                </td>
+                                <td>
+                                    <span class="badge badge-warning">
+                                        En attente
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rapp. Prév</td>
+                                <td>10 dec, 2020</td>
+                                <td>12 mars, 2021/td>
+                                <td class="td-team">
+                                    <div class="img-2"></div>
+                                    <div class="img-3"></div>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">
+                                        Succès
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Comptabilité</td>
+                                <td>11 Fév, 2018</td>
+                                <td>10 Fév, 2050</td>
+                                <td class="td-team">
+                                    <div class="img-1"></div>
+                                    <div class="img-3"></div>
+                                </td>
+                                <td>
+                                    <span class="badge badge-warning">
+                                        En attente
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cons. Stratégie</td>
+                                <td>12 Aout, 2019</td>
+                                <td>12 Sept, 2020</td>
+                                <td class="td-team">
+                                    <div class="img-1"></div>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">
+                                        Succès
+                                    </span>
+                                </td>
+                            </tr>
+                            
+    
+                        </tbody>
+                    </table>
+                </div>
+                <!--  -->
+
+                <!--  -->
+                <div class="summary">
+                    <div class="summary-card">
+                        <div class="summary-single">
+                            <span class="material-icons">
+                                badge
+                            </span>
+                            <div>
+                                <h5>196</h5>
+                                <small>Nombre du staff</small>
+                            </div>
+    
+                        </div>
+                        <div class="summary-single">
+                            <span class="material-icons">
+                                mood
+                            </span>
+                            <div>
+                                <h5>196</h5>
+                                <small>Nombre du staff</small>
+                            </div>
+    
+                        </div>
+                        <div class="summary-single">
+                            <span class="material-icons">
+                                badge
+                            </span>
+                            <div>
+                                <h5>196</h5>
+                                <small>Nombre du staff</small>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="meet-card">
+                        <div class="meet-flex">                   
+                            <div class="meet-img">
+                            </div>
+                            <div class="meet-info">
+                                <h5>Marie-Sol Doub</h5>
+                                <small>Votre conseiller</small>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">   
+                            <button>
+                                <span class="material-icons">
+                                    chat
+                                </span>
+                                Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+
+            </div> 
+
+        </section>
+        <!-- FIN RECENT  -->
+
+    </main>
+    <!-- FIN MAIN  -->
+
+</div>
+<!-- FIN CENTRE -->

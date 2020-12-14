@@ -1,5 +1,5 @@
 <!-- header  -->
-<header>
+<header *ngIf="isAuthenticated">
   <div class="logo">
     
     <a [routerLink]="['/main']" fragment="debut" (click)="closeMenu()">
@@ -70,7 +70,7 @@
 </div>
 
 <!-- footer  -->
-<footer class="container-fluid">
+<footer class="container-fluid" *ngIf="isAuthenticated">
   <div class="container footer">
     <div class="footer_item">
       <div class="logo">

@@ -1519,6 +1519,7 @@ footer {
 
 // FOOTER
 .footer {
+    z-index: 1000;
     flex-direction: row;
 
     .footer_item {

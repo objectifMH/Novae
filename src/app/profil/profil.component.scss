@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
-section {
-    min-height: 100vh;
+.section {
+    //min-height: 100vh;
     background-color:orange;
     padding: 80px 0px 0px;
     border-bottom: 0.125rem solid rgba(0, 0, 0, 0.35);
@@ -17,7 +17,7 @@ section {
 
     .card {
         position: relative;
-        height: 500px;
+        //height: 500px;
         background-attachment: $color-text;
         border-radius: 5px;
         box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1);
@@ -50,8 +50,6 @@ section {
         transition: .3s;
         z-index: 3;
     }
-
-
 
     .main {
         position: absolute;
@@ -113,3 +111,991 @@ section {
     }
     
 }
+
+* {
+    //font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+  
+#sidebar-toggle {
+    display: none;
+}
+
+#sidebar-toggle:checked  {
+    transition: 0.5s ease-in-out;
+
+    ~ .sidebar {
+        width: 110px;
+    }
+    
+    ~ .sidebar .sidebar-header {
+        
+        .logo {
+            justify-content: center;
+            
+        }
+
+        a{
+            display: none;
+        }
+        
+    }
+
+    ~ .sidebar .sidebar-menu  li span:last-child{
+        display: none;
+    }
+
+    ~ .main-content {
+        //margin-left: 110px;
+
+        header {
+            //left: 110px;
+
+            .social-icons {
+                //transform: translateX(120px);
+            }
+            
+        }
+    }
+}
+
+.sidebar {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    //background-image: linear-gradient(to top, $color-light, $color-dark);
+    background: $color-dark;
+    color: $color-text;
+    padding: 1rem;
+    overflow-y: hidden;
+    transition: all ease-in-out .5s;
+    z-index: 1000;
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.25);
+
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {      
+            font-size: 2em;         
+            color: $color_text;
+            font-weight: bold;
+            text-shadow: rgba(0,0,0,.75) 2px 2px; 
+            letter-spacing: 1px; 
+
+            // Pour l'animation : 
+            transform: translateX(-100em);
+            animation: slideIn .6s forwards;
+            animation-delay: 0.5s;
+
+            span {
+                color: $color_light;
+            }
+        }
+
+        .material-icons {
+            font-size: 2.7em;           
+            cursor: pointer;
+        }
+    }
+
+    .sidebar-header {
+        height: 60px;
+        transition: ease-in-out .5s;
+
+    }
+
+    .sidebar-menu {
+        padding: 1rem;
+        margin-top: 50px;
+        transition: ease-in-out .5s;
+
+    }
+
+    li {
+        margin-bottom: 1.4rem;
+        transition: 0.4s ease-in-out;
+
+        &:hover {
+            transform: translateX(10px);
+            a {
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+
+    a {
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        transition: 0.4s ease-in-out;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.6s ease-in-out;
+
+        .material-icons {
+            margin-right: 10px;
+            border: 2px solid $color-text;
+            padding: 4px;
+            //border-radius: 5px;
+            font-size: 1.4em;
+        }
+    }
+}
+
+.main-content {
+    position: relative;
+    margin-left: 240px;
+    transition: ease-in-out .5s;
+    margin-left: 110px;
+
+
+
+    // HEADER //
+    header {
+        position: fixed;
+        top: 0;
+        left: 240px;
+        z-index: 100;
+        width: calc(100% - 110px);
+        //background: linear-gradient(150deg, #003e59 0%, #40bcd6 100%);
+        background: $color-text;
+        height: 60px;
+        padding: 0rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: rgba(0, 0, 0, 0.35);
+        color: $color-dark;
+        transition: ease-in-out .5s;
+        left: 110px;
+        box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, .2);
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            display: none;
+
+            input {
+                border: 0;
+                outline: 0;
+                padding: 1rem;
+                height: 38px;
+                font-family: 'Poppins', sans-serif;
+                width: 115px;
+
+            }
+
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            //transform: translateX(120px);
+            background: $color-text;
+
+            position: absolute;
+            right: 10px;
+
+            div, span {
+                margin-left: 1.2rem;
+            }
+
+            div {
+                height: 50px;
+                width: 50px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-image: url(../../assets/person/christina6.jpg);
+                border-radius: 50%;
+            }
+        }
+    }
+    // FIN HEADER //
+
+
+    // MAIN //
+    main {
+        margin-top: 60px;
+        background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
+        min-height: 90vh;
+        padding: 3rem 1.5rem;
+
+
+        // TITRE DASHBOARD //
+        .dash-title {
+            color: $color-dark;
+            margin-bottom: 1rem;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+        // FIN TITRE DASHBOARD //
+
+
+        // CARDS //
+        .dash-cards {
+            display: grid;
+            grid-template-columns: 100%;
+            
+
+            .card_single {
+                background: $color-dark;
+                //border-radius: 7px;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+                padding: 5px 10px;
+                margin-bottom: 1rem;
+
+
+                .card_body {
+                    padding: 1.3rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    span {
+                        font-size: 2.4rem;
+                        //background: $color-text;
+                        padding-right: 1rem;
+                        color: $color-text;
+                        margin-bottom: 15px;
+                    }
+
+                    h5 {
+                        margin: 0;
+                        color: $color-text;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        font-family: 'Poppins', sans-serif;
+                    }
+
+                    h4 {
+                        margin: 0;
+                        color: grey;
+                        font-size: 1.1rem;
+                        font-family: 'Poppins', sans-serif;
+                    }
+                }
+
+                .card_footer {
+                    padding: .2rem 1rem;
+                    background: $color-dark;
+
+                    a{
+                        color: $color-text;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        text-align: right;
+                        display: block;
+                    }
+                }
+            }
+        }
+        // FIN CARDS //
+
+        .recent {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            //background: pink;
+            //display: none;
+
+            .activity-grid {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-column-gap: 1.5rem;
+
+                .activity-card {
+                    background: $color-text;
+                    border-radius: 7px;
+                    margin-bottom: 40px;
+                    overflow-x: auto;
+
+
+                    h3 {
+                        color: grey;
+                        padding: 2rem !important;
+                        font-weight: 700;
+                        margin: 0;
+                        padding: 1rem 0.8rem !important;
+                    }
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;  
+                        
+                        thead {
+                            background: #efefef;
+                            text-align: left;
+                        }
+
+                        th, td {
+                            font-size: 1rem;
+                            padding: 1rem .8rem;
+                            color: $color-dark;
+                        }
+
+                        td {
+                            font-size: 1rem;
+                        }
+
+                        tbody tr:nth-child(even) {
+                            background: #f9fafc;
+                        }
+
+                        .badge {
+                            padding: .5rem 1rem;
+                            border-radius: 20px;
+                            font-weight: 700;
+                            color: $color-text;
+                        }
+
+                        .td-team {
+                            display: flex;
+                            align-items: center;
+
+                            .img-1, .img-2, .img-3 {
+                                height: 42px;
+                                width: 42px;
+                                border-radius: 50%;
+                                margin-left: -15px;
+                                border: 3px solid #efefef;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                            }
+
+                            .img-1 {
+                                background-image: url(../../assets/person/christina2.jpg);
+                            }
+
+                            .img-2 {
+                                background-image: url(../../assets/person/christina1.jpg);
+                            }
+
+                            .img-3 {
+                                background-image: url(../../assets/person/christina5.jpg);
+                            }
+                        }
+
+
+                    }
+
+                   
+                }
+
+                .summary {
+                    margin-right: 1rem;
+                    margin-bottom: 40px;
+
+                    .summary-card{
+                        margin: auto;
+                        margin-bottom: 1.5rem;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                        background: #fff;
+                        border-radius: 7px;
+
+                        .summary-single {
+                            padding: .5rem 1rem;
+                            display: flex;
+                            align-items: center;
+    
+                            span {
+                                font-size: 1.5rem;
+                                color: #777;
+                                padding-right: 1rem;
+                            }
+
+                            h5 {
+                                color: $color-dark;
+                                font-size: 1.1rem;
+                                font-weight: 700;
+                                margin-bottom: 0rem !important;
+                            }
+
+                            small {
+                                font-weight: 700;
+                                color: grey;
+                            }
+                        }
+                    }
+
+                    
+                    .meet-card {
+                        background: #fff;
+                        border-radius: 7px;
+                        padding: 1rem;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        margin: auto;
+                        margin-bottom: 40px;
+
+                        .meet-flex {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: .3rem;
+
+                            
+                            .meet-img {
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-image: url(../../assets/person/christina1.jpg);
+                                margin-right: 0.7rem;
+                            }
+
+                            .meet-info {
+                                h5 {
+                                    color: black;
+                                    font-weight: 700;
+                                    margin: 0;
+                                    font-size: 1.1rem;
+                                }
+
+                                small {
+                                    color: grey;
+                                    font-size: 0.9rem;
+                                }
+                            }
+                        }
+
+
+                        .text-center {
+                            text-align: center;
+                            margin-top: 15px;
+
+                            button {
+                                background: $color-dark;
+                                color: $color-text;
+                                border: 1px solid $color-dark;
+                                border-radius: 4px;
+                                padding: .4rem 1rem;
+
+                                display: flex;
+                                align-items: center;
+
+                                .material-icons {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                    }
+                    
+                }
+
+
+            }
+        }
+
+
+    }
+    // FIN MAIN //
+}
+
+@media screen and (min-width: 375px) {
+    // MAIN //
+
+    //DASH
+    .card_body {
+        padding: 1.3rem 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row !important;
+
+        span {
+            margin-bottom: 0px !important;
+        }
+    }
+
+    
+
+    // FIN MAIN //
+
+
+}
+
+
+
+
+@media screen and (min-width: 425px) {
+    .search-wrapper {
+        display: flex !important;
+        align-items: center;
+    
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+      
+}
+
+@media screen and (min-width: 1024px) {
+
+    #sidebar-toggle {
+        display: none;
+    }
+    
+    #sidebar-toggle:checked  {
+        transition: 0.5s ease-in-out;
+    
+        ~ .sidebar {
+            width: 100px;
+        }
+        
+        ~ .sidebar .sidebar-header {
+            
+            .logo {
+                justify-content: center;   
+            }
+    
+            a{
+                display: none;
+            }
+            
+        }
+    
+        ~ .sidebar .sidebar-menu  li span:last-child{
+            display: none;
+        }
+    
+        ~ .main-content {
+            margin-left: 110px;
+    
+            header {
+                left: 107px;
+                width: calc(100% - 110px);
+    
+                .social-icons {
+                    right: 10px;
+                }
+                
+            }
+        }
+    }
+
+    .sidebar {
+        font-family: 'Poppins', sans-serif;
+        min-height: 100%;
+        width: 240px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        //background-image: linear-gradient(to top, $color-light, $color-dark);
+        background: $color-dark;
+        color: $color-text;
+        padding: 1rem;
+        overflow-y: hidden;
+    
+    
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            a {      
+                font-size: 2em;         
+                color: $color_text;
+                font-weight: bold;
+                text-shadow: rgba(0,0,0,.75) 2px 2px; 
+                letter-spacing: 1px; 
+    
+                // Pour l'animation : 
+                transform: translateX(-100em);
+                animation: slideIn .6s forwards;
+                animation-delay: 0.5s;
+    
+                span {
+                    color: $color_light;
+                }
+            }
+    
+            .material-icons {
+                font-size: 2.7em;           
+                cursor: pointer;
+            }
+        }
+    
+        .sidebar-header {
+            height: 60px;
+            transition: ease-in-out .5s;
+    
+        }
+    
+        .sidebar-menu {
+            padding: 1rem;
+            margin-top: 50px;
+            transition: ease-in-out .5s;
+    
+        }
+    
+        li {
+            margin-bottom: 1.4rem;
+            transition: 0.4s ease-in-out;
+    
+            &:hover {
+                transform: translateX(10px);
+                a {
+                    letter-spacing: 1.5px;
+                }
+            }
+        }
+    
+        a {
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            transition: 0.4s ease-in-out;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+    
+            .material-icons {
+                margin-right: 10px;
+                border: 2px solid $color-text;
+                padding: 4px;
+                //border-radius: 5px;
+                font-size: 1.4em;
+            }
+        }
+    }
+    
+    .main-content {
+        position: relative;
+        //min-height: 100vh;
+        margin-left: 240px;
+        transition: ease-in-out .5s;
+    
+        header {
+            position: fixed;
+            top: 0;
+            left: 240px;
+            z-index: 100;
+            width: calc(100% - 255px);
+            //background: linear-gradient(150deg, #003e59 0%, #40bcd6 100%);
+            background: $color-text;
+            height: 60px;
+            padding: 0rem 1rem;
+            display: flex;
+            align-items: center;
+            border-bottom: rgba(0, 0, 0, 0.35);
+            color: $color-dark;
+            transition: all ease-in-out .5s;
+    
+    
+            .search-wrapper {
+                display: flex;
+                align-items: center;
+    
+                input {
+                    border: 0;
+                    outline: 0;
+                    padding: 1rem;
+                    height: 38px;
+                    font-family: 'Poppins', sans-serif;
+                }
+    
+            }
+    
+            .social-icons {
+                display: flex;
+                align-items: center;
+    
+                div, span {
+                    margin-left: 1.2rem;
+                }
+    
+                div {
+                    height: 50px;
+                    width: 50px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-image: url(../../assets/person/christina6.jpg);
+                    border-radius: 50%;
+                }
+            }
+        }
+    
+        main {
+            margin-top: 60px;
+            background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
+            //background: $color-text ;
+            min-height: 90vh;
+            padding: 3rem 1.5rem;
+            //background: orange;
+    
+            .dash-title {
+                color: $color-dark;
+                margin-bottom: 1rem;
+                font-size: 2em;
+                font-weight: 700;
+                letter-spacing: 1.3px;
+                text-transform: uppercase;
+            }
+    
+            .dash-cards {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-column-gap: 5rem;
+    
+                .card_single {
+                    background: $color-dark;
+                    //border-radius: 7px;
+                    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+                    padding: 5px 10px;
+    
+    
+                    .card_body {
+                        padding: 1.3rem 1rem;
+                        display: flex;
+                        align-items: center;
+    
+                        span {
+                            font-size: 2.4rem;
+                            //background: $color-text;
+                            padding-right: 1rem;
+                            color: $color-text;
+                        }
+    
+                        h5 {
+                            margin: 0;
+                            color: $color-text;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            font-family: 'Poppins', sans-serif;
+                        }
+    
+                        h4 {
+                            margin: 0;
+                            color: grey;
+                            font-size: 1.1rem;
+                            font-family: 'Poppins', sans-serif;
+                        }
+                    }
+    
+                    .card_footer {
+                        padding: .2rem 1rem;
+                        background: $color-dark;
+    
+                        a{
+                            color: $color-text;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            text-align: right;
+                            display: block;
+                        }
+                    }
+                }
+            }
+    
+            .recent {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                //background: pink;
+    
+                .activity-grid {
+                    display: grid;
+                    grid-template-columns: 75% 25%;
+                    grid-column-gap: 1.5rem;
+    
+                    .activity-card {
+                        background: $color-text;
+                        //background: purple;
+                        border-radius: 7px;
+    
+                        h3 {
+                            color: grey;
+                            padding: 2rem !important;
+                            font-weight: 700;
+                            margin: 0;
+                            padding: 1rem 0.8rem !important;
+                        }
+    
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;  
+                            
+                            thead {
+                                background: #efefef;
+                                text-align: left;
+                            }
+    
+                            th, td {
+                                font-size: 1rem;
+                                padding: 1rem .8rem;
+                                color: $color-dark;
+                            }
+    
+                            td {
+                                font-size: 1rem;
+                            }
+    
+                            tbody tr:nth-child(even) {
+                                background: #f9fafc;
+                            }
+    
+                            .badge {
+                                padding: .5rem 1rem;
+                                border-radius: 20px;
+                                font-weight: 700;
+                                color: $color-text;
+                            }
+    
+                            .td-team {
+                                display: flex;
+                                align-items: center;
+    
+                                .img-1, .img-2, .img-3 {
+                                    height: 42px;
+                                    width: 42px;
+                                    border-radius: 50%;
+                                    margin-left: -15px;
+                                    border: 3px solid #efefef;
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                }
+    
+                                .img-1 {
+                                    background-image: url(../../assets/person/christina2.jpg);
+                                }
+    
+                                .img-2 {
+                                    background-image: url(../../assets/person/christina1.jpg);
+                                }
+    
+                                .img-3 {
+                                    background-image: url(../../assets/person/christina5.jpg);
+                                }
+                            }
+                        }                     
+                    }
+    
+                    .summary {
+                        margin-right: 1rem;
+                        .summary-card{
+                            margin-bottom: 1.5rem;
+                            padding-top: .5rem;
+                            padding-bottom: .5rem;
+                            background: #fff;
+                            border-radius: 7px;
+    
+                            .summary-single {
+                                padding: .5rem 1rem;
+                                display: flex;
+                                align-items: center;
+        
+                                span {
+                                    font-size: 1.5rem;
+                                    color: #777;
+                                    padding-right: 1rem;
+                                }
+    
+                                h5 {
+                                    color: $color-dark;
+                                    font-size: 1.1rem;
+                                    font-weight: 700;
+                                    margin-bottom: 0rem !important;
+                                }
+    
+                                small {
+                                    font-weight: 700;
+                                    color: grey;
+                                }
+                            }
+                        }
+    
+                        
+                        .meet-card {
+                            background: #fff;
+                            border-radius: 7px;
+                            padding: 1rem;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+    
+                            .meet-flex {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: .3rem;
+    
+                                
+                                .meet-img {
+                                    height: 60px;
+                                    width: 60px;
+                                    border-radius: 50%;
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-image: url(../../assets/person/christina1.jpg);
+                                    margin-right: 0.7rem;
+                                }
+    
+                                .meet-info {
+                                    h5 {
+                                        color: black;
+                                        font-weight: 700;
+                                        margin: 0;
+                                        font-size: 1.1rem;
+                                    }
+    
+                                    small {
+                                        color: grey;
+                                        font-size: 0.9rem;
+                                    }
+                                }
+                            }
+    
+    
+                            .text-center {
+                                text-align: center;
+                                margin-top: 15px;
+    
+                                button {
+                                    background: $color-dark;
+                                    color: $color-text;
+                                    border: 1px solid $color-dark;
+                                    border-radius: 4px;
+                                    padding: .4rem 1rem;
+    
+                                    display: flex;
+                                    align-items: center;
+    
+                                    .material-icons {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+    
+                        }
+                        
+                    }
+    
+    
+                }
+            }
+    
+    
+        }
+    }
+}
+
+
+
+

@@ -115,7 +115,7 @@ export class AppComponent {
     AOS.init();
     this.getIsAuthenticated();
     this.getLoginAuthenticated();
-    
+    this.inout.setIsProfil(false);
     this.getIsProfil();
   }
 
@@ -126,8 +126,9 @@ export class AppComponent {
   getIsProfil() {
     this.inout.getIsProfil().subscribe(
       success => {
-        console.log(success);
+        //console.log("avant", success, this.isProfil);
         this.isProfil = success;
+        //console.log("apres", success, this.isProfil);
       },
       error => {
         console.log(error);

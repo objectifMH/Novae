@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { InOutService } from '../services/in-out.service';
 
 @Component({
@@ -10,11 +11,19 @@ export class ProfilComponent implements OnInit {
   
   profilAuthenticated: any;
 
-  constructor(private inout: InOutService) { }
+  constructor(private inout: InOutService, 
+    private route: ActivatedRoute, private router: Router) { 
+
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        if (val.url === '/profil')
+        this.inout.setIsProfil(true);
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.getLoginAuthenticated();
-    this.inout.setIsProfil(true);
   }
 
   getLoginAuthenticated() {

@@ -39,7 +39,7 @@ header {
     padding: 10px;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 6000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -148,12 +148,17 @@ header {
                     padding: 25px 30px;
                     letter-spacing: 1px;
                     width: 100%;
+                    transition: 0.5s ease-in-out;
                 }
 
                 &:hover {
                     background: linear-gradient(150deg, rgba(0, 0, 0, 0.14), #279cc4);
-                    transform: scale(1.05);
-                    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
+                    //transform: scale(1.05);
+                    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);   
+                    a {
+                        transform: translateX(25px);
+                        letter-spacing: 1.5px;
+                    }
                 }
 
                 &:nth-child(1) {

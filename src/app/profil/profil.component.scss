@@ -135,18 +135,17 @@
     ~ .sidebar .sidebar-header {
         
         .logo {
-            justify-content: center;
-            
+            justify-content: center;     
         }
 
         a{
             display: none;
         }
-        
     }
 
-    ~ .sidebar .sidebar-menu  li span:last-child{
-        display: none;
+    ~ .sidebar .sidebar-menu  li span:last-child {
+        //display: none;
+        transform: translateX(-330px);
     }
 
     ~ .main-content {
@@ -176,7 +175,7 @@
     color: $color-text;
     padding: 1rem;
     overflow-y: hidden;
-    transition: all ease-in-out .5s;
+    transition: all ease-in-out .9s;
     z-index: 1000;
     box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.25);
 
@@ -211,7 +210,7 @@
 
     .sidebar-header {
         height: 60px;
-        transition: ease-in-out .5s;
+        transition: ease-in-out .6s;
 
     }
 
@@ -232,6 +231,42 @@
                 letter-spacing: 1.5px;
             }
         }
+
+        &:nth-child(1) {
+            span {  
+                transition-delay: 0.15s;
+            }
+        }
+
+        &:nth-child(2) {
+            span {  
+                transition-delay: 0.25s;
+            }
+        }
+
+        &:nth-child(3) {
+            span {  
+                transition-delay: 0.35s;
+            }
+        }
+
+        &:nth-child(4) {
+            span {  
+                transition-delay: 0.45s;
+            }
+        }
+
+        &:nth-child(5) {
+            span {  
+                transition-delay: 0.55s;
+            }
+        }
+
+        &:nth-child(6) {
+            span {  
+                transition-delay: 0.65s;
+            }
+        }
     }
 
     a {
@@ -244,6 +279,10 @@
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         transition: all 0.6s ease-in-out;
+
+        span {
+            transition: 0.5s ease-in-out;
+        }
 
         .material-icons {
             margin-right: 10px;

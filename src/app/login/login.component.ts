@@ -172,7 +172,7 @@ export class LoginComponent implements OnInit {
   }
 
   toggle_in() {
-    console.log("toggle in ", this.isSeConnecterIn, this.isSeConnecterUp);
+    //console.log("toggle in ", this.isSeConnecterIn, this.isSeConnecterUp);
     this.isSeConnecterIn = false;
     this.isSeConnecterUp = true;
     this.recordForm.reset();
@@ -181,12 +181,11 @@ export class LoginComponent implements OnInit {
   }
 
   toggle_up() {
-    console.log("toggle up ", this.isSeConnecterIn, this.isSeConnecterUp);
+    //console.log("toggle up ", this.isSeConnecterIn, this.isSeConnecterUp);
     this.isSeConnecterIn = true;
     this.isSeConnecterUp = false;
     this.recordForm.reset();
     this.loginForm.reset();
   }
-
-
+  
 }

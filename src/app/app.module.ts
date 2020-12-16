@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ParamComponent } from './param/param.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProfilComponent } from './profil/profil.component';
     AppComponent,
     MainComponent,
     LoginComponent,
-    ProfilComponent
+    ProfilComponent,
+    ParamComponent
   ],
   imports: [
     BrowserModule,

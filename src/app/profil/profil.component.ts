@@ -10,6 +10,8 @@ import { InOutService } from '../services/in-out.service';
 export class ProfilComponent implements OnInit {
   
   profilAuthenticated: any;
+  isMain = true;
+  isDeconnexion = false;
 
   constructor(private inout: InOutService, 
     private route: ActivatedRoute, private router: Router) { 
@@ -40,10 +42,24 @@ export class ProfilComponent implements OnInit {
 
   deconnexion() {
     if (confirm('Etes-vous sûr(e) de vouloir vous deconnecter, ' + this.profilAuthenticated.pseudo.charAt(0).toUpperCase()+this.profilAuthenticated.pseudo.substr(1) + ' !')) {
-      
+      this.isDeconnexion = true;
       this.inout.setIsAutenticated(false);
-      this.inout.setProfilAuthenticated({pseudo : "", mdp: "", role: "USER", mail:"" })
+      this.inout.setProfilAuthenticated({pseudo : "", mdp: "", role: "USER", mail:"" });
+      setTimeout(() => {  
+        this.router.navigate(['/main']);
+      }, 2000)
     }
   }
+
+  showParam()
+   {
+     this.isMain = false;
+     this.router.navigate(['param'], {relativeTo: this.route});
+   }
+
+   showDasboard()
+   {
+    this.isMain = true;
+   }
 
 }

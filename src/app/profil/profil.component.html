@@ -1,6 +1,3 @@
-
-
-
 <!-- GAUCHE NAV  -->
 <input type="checkbox" id="sidebar-toggle">
 <div class="sidebar">
@@ -27,7 +24,7 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="#/profil" title='Accueil'>
+                <a href="#/profil" title='Accueil' (click)="showDasboard()">
                     <span class="material-icons">
                         home
                     </span>
@@ -35,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="#/profil" title="Paramètres">
+                <a href="#/profil/param" title="Paramètres" (click)="showParam()">
                     <span class="material-icons">
                         settings
                     </span>
@@ -67,13 +64,18 @@
                 </a>
             </li>
             <li>
-                <a href="#" (click)='deconnexion()' title="Déconnexion">
+                <a href="#/profil" (click)='deconnexion()' title="Déconnexion">
                     <span class="material-icons">
                         exit_to_app
                     </span>
                     <span>Déconnexion</span>
                 </a>
             </li>
+            <div  *ngIf="isDeconnexion" class="d-flex  justify-content-center mt-5 mb-2">
+                
+                <div class="spinner-border text-info" role="status">
+                </div>
+            </div>
 
         </ul>
     </div>
@@ -105,43 +107,16 @@
     </header>
     <!-- FIN HEADER  -->
 
+
+    <router-outlet *ngIf="!isMain"></router-outlet>
     <!-- MAIN  -->
-    <main>
+    <main *ngIf="isMain">
         <!-- titre  -->
         <h2 class="dash-title">
             <!-- Bonjour Motoko ! -->
             Bonjour @{{profilAuthenticated.pseudo}} !
         </h2>
         <!-- fin titre  -->
-
-        <!-- Section profile parametre  -->
-        <!-- <section class="section">
-            <div class="container">
-                <div class="card">
-                    <div class="header">
-        
-                        <a href="#" class="mail">
-                            <span class="material-icons">
-                                mail
-                            </span>
-                        </a>
-                        <div class="main">
-                            <div class="image">
-                                <div class="hover">
-                                    <span class="material-icons">
-                                        photo_camera
-                                    </span>
-                                </div>
-                            </div>
-                            <h3 class="pseudo">@{{profilAuthenticated.pseudo}}</h3>
-                            <h3 class="email">{{profilAuthenticated.mail}}</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- fin parametre  -->
-
 
         <!-- CARDS  -->
         <div class="dash-cards">

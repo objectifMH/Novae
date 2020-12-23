@@ -12,6 +12,8 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ParamComponent } from './param/param.component';
+import { DashMainComponent } from './dash-main/dash-main.component';
+import { TachesComponent } from './taches/taches.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ParamComponent } from './param/param.component';
     MainComponent,
     LoginComponent,
     ProfilComponent,
-    ParamComponent
+    ParamComponent,
+    DashMainComponent,
+    TachesComponent
   ],
   imports: [
     BrowserModule,

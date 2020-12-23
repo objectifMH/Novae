@@ -20,7 +20,10 @@ export class ProfilComponent implements OnInit {
       if (val instanceof NavigationEnd) {
         if (val.url.slice(0,7) === '/profil')
         this.inout.setIsProfil(true);
-        console.log("profil",val.url.slice(0,7));
+
+        if (val.url === '/profil')
+        this.router.navigate(['/profil/main']);
+        console.log("profil",val.url.slice(0,7), val);
       }
     });
   }
@@ -51,15 +54,10 @@ export class ProfilComponent implements OnInit {
     }
   }
 
-  showParam()
-   {
-     this.isMain = false;
-     this.router.navigate(['param'], {relativeTo: this.route});
-   }
 
    showDasboard()
    {
-    this.isMain = true;
+    //this.isMain = true;
    }
 
 }

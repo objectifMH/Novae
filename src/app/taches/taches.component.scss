@@ -1,0 +1,75 @@
+@import '../../styles.scss';
+
+// TITRE DASHBOARD //
+.dash-title {
+    color: $color-dark;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+// FIN TITRE DASHBOARD //
+
+
+// CARDS //
+.dash-cards {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 80px auto;
+    padding: 1rem;
+    
+
+    .card_single {
+        background: $color-dark;
+        //border-radius: 7px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+        padding: 5px 10px;
+        margin-bottom: 1rem;
+
+
+        .card_body {
+            padding: 1.3rem 1rem;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            span {
+                font-size: 2.4rem;
+                //background: $color-text;
+                padding-right: 1rem;
+                color: $color-text;
+                margin-bottom: 15px;
+            }
+
+            h5 {
+                margin: 0;
+                color: $color-text;
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            h4 {
+                margin: 0;
+                color: grey;
+                font-size: 1.1rem;
+                font-family: 'Poppins', sans-serif;
+            }
+        }
+
+        .card_footer {
+            padding: .2rem 1rem;
+            background: $color-dark;
+
+            a{
+                color: $color-text;
+                text-transform: uppercase;
+                font-weight: 600;
+                text-align: right;
+                display: block;
+            }
+        }
+    }
+}
+// FIN CARDS //

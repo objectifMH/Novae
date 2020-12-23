@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { DashMainComponent } from './dash-main/dash-main.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { ParamComponent } from './param/param.component';
 import { ProfilComponent } from './profil/profil.component';
+import { TachesComponent } from './taches/taches.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,10 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "profil", component: ProfilComponent, canActivate: [AuthGuard],
     children: [
-      {path: "param", component: ParamComponent}
+      {path: "param", component: ParamComponent},
+      {path: "main", component: DashMainComponent},
+      {path: "taches", component: TachesComponent},
+
     ]},
   // {path: "profil", component: ProfilComponent,
   //   children: [
@@ -25,7 +30,8 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes, {
       useHash: true,
       onSameUrlNavigation: 'reload',
-      anchorScrolling: 'enabled'
+      relativeLinkResolution: 'legacy',
+      anchorScrolling: 'enabled',
     })],
   exports: [RouterModule]
 })

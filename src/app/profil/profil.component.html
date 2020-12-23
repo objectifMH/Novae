@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="#/profil/param" title="Paramètres" (click)="showParam()">
+                <a href="#/profil/param" title="Paramètres" >
                     <span class="material-icons">
                         settings
                     </span>
@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="#/profil" title="Taches">
+                <a href="#/profil/taches" title="Taches">
                     <span class="material-icons">
                         today
                     </span>
@@ -108,9 +108,9 @@
     <!-- FIN HEADER  -->
 
 
-    <router-outlet *ngIf="!isMain"></router-outlet>
+    <router-outlet></router-outlet>
     <!-- MAIN  -->
-    <main *ngIf="isMain">
+    <main *ngIf="false">
         <!-- titre  -->
         <h2 class="dash-title">
             <!-- Bonjour Motoko ! -->

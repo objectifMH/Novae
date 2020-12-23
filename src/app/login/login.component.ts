@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
         if (success === true) {
           setTimeout(() => {
-            this.router.navigate(['/profil']);
+            this.router.navigate(['/profil/']);
           }, 2500)
         }
       },
@@ -187,5 +187,5 @@ export class LoginComponent implements OnInit {
     this.recordForm.reset();
     this.loginForm.reset();
   }
-  
+
 }

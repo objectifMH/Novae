@@ -4,13 +4,13 @@
   <div class="debut" id="debut" [ngClass]="{'iOS':isIos}">
     <div class="container container_debut">
       <div class="container_debut_grid">
-        <img src="assets/finance.svg" alt="finance" data-aos="fade-right" data-aos-duration="2000"/>
+        <img src="assets/finance.svg" alt="finance" data-aos="fade-right" data-aos-duration="2000" />
         <div class="grid_text" data-aos="fade-left" data-aos-duration="2000">
           <h1>
             Avec Novae tout est carré, le top en comtpabilité.
           </h1>
           <button btn>
-            <a [routerLink]="['/login']" fragment="container">Rejoignez-nous</a>    
+            <a [routerLink]="['/login']" fragment="container">Rejoignez-nous</a>
           </button>
         </div>
       </div>
@@ -97,6 +97,61 @@
       </div>
     </div>
 
+    <div class="titre container" id="simulateur">
+      <div class="titre_container">
+        <h3>Simulateur pret immobilier</h3>
+      </div>
+    </div>
+    <div class="simulateur_container container">
+      <div class="simulateur_gauche">
+        <p>
+          Montant
+        </p>
+        <div class="montant">
+          <ngx-slider [(value)]="value" [options]="optionsSliderMontant" (userChangeStart)="onUserChangeStart($event)"
+            (userChange)="onUserChange($event)" (userChangeEnd)="onUserChangeEnd($event)">
+          </ngx-slider>
+        </div>
+        <p>
+          Durée
+        </p>
+        <div class="duree">
+          <ngx-slider [(value)]="minValue" [options]="optionsSliderDuree"
+            (userChangeStart)="onUserChangeStartDuree($event)" (userChange)="onUserChangeDuree($event)"
+            (userChangeEnd)="onUserChangeEndDuree($event)">
+          </ngx-slider>
+        </div>
+
+        <!-- Events:
+        <textarea type="text" class="form-control" style="min-width: 100%; min-height: 300px;">
+          {{logText}} , {{logTextDuree}} , montant : ({{textMontant}})
+        </textarea> -->
+
+
+        <p>
+          Taux d'intérêt : <span>{{textTaux}}%</span>
+        </p>
+        <p>
+          Taux d'assurance : <span>{{textAssurance}}%</span>
+        </p>
+
+      </div>
+
+
+
+      <div class="simulateur_droit" *ngIf="textMontant !== '' && textDuree !== ''">
+        <p>
+          Pour un crédit de {{textMontant}}€ sur {{textDuree}}ans avec un taux d'intérêt de {{textTaux}}% et un taux d'assurance de {{textAssurance}}%.
+        </p>
+        <br>
+        <h3>
+          Mensualité de <span>{{mensualite}}</span>€/mois
+        </h3>
+      </div>
+
+
+    </div>
+
 
   </div>
   <!-- fin missions  -->
@@ -168,8 +223,8 @@
         Des&nbsp;questions sur votre fiscalité ? Une&nbsp;demande de&nbsp;devis !
       </h4>
       <button btn>
-        <a [routerLink]="['/main']" fragment="contacter">        Contactez-nous
-        </a>    
+        <a [routerLink]="['/main']" fragment="contacter"> Contactez-nous
+        </a>
       </button>
     </div>
   </div>
@@ -565,149 +620,9 @@
             </ng-template>
           </owl-carousel-o>
           <!-- fin carousel  -->
-          <!-- <div class="col-lg-4">
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="assets/christina.jpg" alt="">
-                  <div class="news-grid-box">
-                    <h1>15</h1>
-                    <p>Aout</p>
-                  </div>
-                </div>
-    
-                <div class="news-grid-txt"> 
-                  <span class="theme">Finance</span>
-                  <h2>COVID-19 : LE FONDS DE SOLIDARITÉ MAINTENU JUSQU’AU 31 DÉCEMBRE 2020</h2>
-                  <ul>
-                    <li>
-                      <span class="material-icons">
-                      today
-                      </span>
-                      15 Aout, 2020</li>
-                    <li>
-                      <span class="material-icons">
-                        person
-                      </span>
-                        Novae Team</li>
-                  </ul>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
-                  </p>
-                  <div class="button_lire_plus" >  
-                    <a href="">Lire Plus</a>
-                  </div>
-    
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  <img src="assets/2.jpg" alt="">
-                  <div class="news-grid-box">
-                    <h1>05</h1>
-                    <p>Juin</p>
-                  </div>
-                </div>
-    
-                <div class="news-grid-txt"> 
-                  <span class="theme">Finance</span>
-                  <h2> 
-                    ENTREPRISES EN DIFFICULTÉ : UN NUMÉRO SPÉCIAL D’INFORMATION SUR LES MESURES D’URGENCES</h2>
-                  
-                  <ul>
-                    <li>
-                        <span class="material-icons">
-                          today
-                        </span>
-                        
-                      05 Juin, 2020
-                      
-                    </li>
-                    <li>
-                      <span class="material-icons">
-                        person
-                      </span>
-                        Novae Team</li>
-                  </ul>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
-                  </p>
-                  <div class="button_lire_plus" >  
-                    <a href="">Lire Plus</a>
-                  </div>
-    
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="news-grid">
-                <div class="news-grid-image">
-                  
-                  <img src="assets/1.jpg" alt="">
-                  <div class="news-grid-box">
-    
-                    <h1>19</h1>
-                    <p>Sept</p>
-                  </div>
-                </div>
-                <div class="news-grid-txt"> 
-                  <span class="theme">Finance</span>
-                  <h2>PGE : prolongé jusqu’au 30 juin 2021</h2>
-                  <ul>
-                    <li>
-                      <span class="material-icons">
-                      today
-                      </span>
-                      Nov 22, 2020</li>
-                    <li>
-                      <span class="material-icons">
-                        person
-                      </span>
-                        Novae Team</li>
-                  </ul>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque id deserunt reiciendis quaerat optio porro rem sapiente voluptas, consequuntur, enim suscipit, eligendi mollitia libero asperiores veniam delectus neque amet esse?
-                  </p>
-                  <div class="button_lire_plus" >  
-                    <a href="">Lire Plus</a>
-                  </div>
-    
-                </div>
-              </div>
-              
-            </div> -->
         </div>
       </div>
     </div>
-
-    <!-- <div class="actus_container container">
-        <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
-          <img src="assets/christina.jpg" />
-        </div>
-        <div class="actu_text">
-          <h4>COVID-19 : LE FONDS DE SOLIDARITÉ MAINTENU JUSQU’AU 31 DÉCEMBRE 2020</h4>
-          <p>12 Septembre 2020 </p>
-        </div>
-      </div>
-      <div class="actus_container container">
-        <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
-          <img src="assets/1.jpg" />
-        </div>
-        <div class="actu_text">
-          <h4>ENTREPRISES EN DIFFICULTÉ : UN NUMÉRO SPÉCIAL D’INFORMATION SUR LES MESURES D’URGENCES</h4>
-          <p>25 Novembre 2020 </p>
-        </div>
-      </div>
-      <div class="actus_container container">
-        <div class="actu_img" data-aos="zoom-in-up" data-aos-duration="700">
-          <img src="assets/chiffres_1.jpg" />
-        </div>
-        <div class="actu_text">
-          <h4>PGE : prolongé jusqu’au 30 juin 2021</h4>
-          <p>04 Decembre 2020 </p>
-        </div>
-      </div> -->
   </div>
   <!-- fin actus  -->
 
@@ -852,7 +767,7 @@
     <div class="form container">
       <!-- contact  -->
 
-      <div class="contact-info "  data-aos="zoom-out-right" data-aos-duration="800">
+      <div class="contact-info " data-aos="zoom-out-right" data-aos-duration="800">
 
         <h3 class="titre">Nous contacter </h3>
         <div class="info_container">
@@ -964,7 +879,6 @@
 
     <!-- ***  -->
   </div>
-
   <!-- fin nous contacter  -->
 
 

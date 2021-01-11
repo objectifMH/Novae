@@ -216,6 +216,75 @@ main {
     }
     // FIN MISSIONS
 
+    // SIMULATEUR 
+
+    
+
+    .simulateur_container {
+        justify-content: center;
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 300px;
+        padding-top: 60px;
+
+        .simulateur_gauche {
+            //border: 3px solid red;
+            width: 60%;
+            //height: 50vh;
+            padding: 2.3rem 2.2rem 2.8rem !important;
+            background: #2c8498;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.6);
+
+            p {
+                font-family: "Rubik", Helvetica, Arial, Lucida, sans-serif !important;
+                font-weight: 1000;
+                text-transform: uppercase;
+                font-size: 1em;
+                color: white !important;
+                letter-spacing: 1px;
+                line-height: 1.5em;
+                margin: 20px 0;
+                span {
+                    font-size: 1.8rem;
+                    color: #003e59;
+                    font-weight: bolder;
+                }
+            }
+
+
+           
+
+            
+
+            
+
+            
+        }
+
+        .simulateur_droit {
+            background: $color_dark;
+            color: white;
+            width: 40%;
+            padding: 2rem 3.5rem;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            p {
+                font-size: 1rem;
+            }
+            h3 {
+                margin-top: 30px;
+                font-size: 1.6rem;
+                span {
+                    font-size: 4rem;
+                    line-height: 4rem;
+                }
+            }
+        }
+
+    }
+    // FIN SIMULATEUR
     
     // CHIFFRES 
     .chiffres {
@@ -1911,7 +1980,6 @@ main {
                         }
     
                     }
-    
                 }
             }
     
@@ -1960,6 +2028,90 @@ main {
     
     
     //FIN ANIMATION
+
+
+
+    // We need to use ::ng-deep to overcome view encapsulation
+    ::ng-deep {
+        .custom-slider .ngx-slider .ngx-slider-bar {
+        background: #ffe4d1;
+        height: 2px;
+    }
+    .custom-slider .ngx-slider .ngx-slider-selection {
+        background: orange;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-pointer {
+      width: 8px;
+      height: 16px;
+      top: auto; /* to remove the default positioning */
+      bottom: 0;
+      background-color: #333;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-pointer:after {
+      display: none;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-bubble {
+      bottom: 14px;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-limit {
+      font-weight: bold;
+      color: orange;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-tick {
+      width: 1px;
+      height: 10px;
+      margin-left: 4px;
+      border-radius: 0;
+      background: #ffe4d1;
+      top: -1px;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+      background: orange;
+    }
+  }
+
+
+  .montant, .duree {
+    width: 85%;
+    margin: auto;
+    }
+
+
+  ::ng-deep {
+    .duree .ngx-slider .ngx-slider-bar, .montant .ngx-slider .ngx-slider-bar {
+        border-radius: 0 !important;
+        background: grey !important;
+        height: 2px;
+    }
+    .duree, .montant {
+        .ngx-slider .ngx-slider-bubble {
+            color: white !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 3px !important;
+        }
+    }
+    
+
+    
+
+    .duree .ngx-slider .ngx-slider-pointer, .montant .ngx-slider .ngx-slider-pointer {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        top: -14px;
+        background-color: #003e59;
+        z-index: 3;
+        border-radius: 0;
+    }
+}
     
     
     

@@ -14,6 +14,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ParamComponent } from './param/param.component';
 import { DashMainComponent } from './dash-main/dash-main.component';
 import { TachesComponent } from './taches/taches.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { TachesComponent } from './taches/taches.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

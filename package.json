@@ -11,11 +11,12 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "~9.1.9",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.9",
     "@angular/compiler": "~9.1.9",
-    "@angular/core": "~9.1.9",
+    "@angular/core": "^9.1.12",
     "@angular/forms": "~9.1.9",
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.9",
@@ -27,11 +28,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "aos": "^2.3.4",
     "bootstrap": "^4.5.3",
+    "bufferutil": "^4.0.1",
     "jquery": "^3.5.1",
     "ngx-owl-carousel-o": "^4.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "utf-8-validate": "^5.0.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

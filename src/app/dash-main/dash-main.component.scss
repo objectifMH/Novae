@@ -3,281 +3,280 @@
 
 // MAIN //
 main {
-margin-top: 60px;
-background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
-min-height: 90vh;
-padding: 3rem 1.5rem;
+    margin-top: 60px;
+    background-image: linear-gradient(to bottom, #f7faff, rgba(231, 234, 243, 0.5) 100%);
+    min-height: 90vh;
+    padding: 3rem 1.5rem;
 
 
-// TITRE DASHBOARD //
-.dash-title {
-    color: $color-dark;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-}
-// FIN TITRE DASHBOARD //
-
-
-// CARDS //
-.dash-cards {
-    display: grid;
-    grid-template-columns: 100%;
-    
-
-    .card_single {
-        background: $color-dark;
-        //border-radius: 7px;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
-        padding: 5px 10px;
+    // TITRE DASHBOARD //
+    .dash-title {
+        color: $color-dark;
         margin-bottom: 1rem;
-
-
-        .card_body {
-            padding: 1.3rem 1rem;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-
-            span {
-                font-size: 2.4rem;
-                //background: $color-text;
-                padding-right: 1rem;
-                color: $color-text;
-                margin-bottom: 15px;
-            }
-
-            h5 {
-                margin: 0;
-                color: $color-text;
-                font-size: 1rem;
-                font-weight: 600;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            h4 {
-                margin: 0;
-                color: grey;
-                font-size: 1.1rem;
-                font-family: 'Poppins', sans-serif;
-            }
-        }
-
-        .card_footer {
-            padding: .2rem 1rem;
-            background: $color-dark;
-
-            a{
-                color: $color-text;
-                text-transform: uppercase;
-                font-weight: 600;
-                text-align: right;
-                display: block;
-            }
-        }
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
     }
-}
-// FIN CARDS //
+    // FIN TITRE DASHBOARD //
 
-.recent {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    //background: pink;
-    //display: none;
 
-    .activity-grid {
+    // CARDS //
+    .dash-cards {
         display: grid;
         grid-template-columns: 100%;
-        grid-column-gap: 1.5rem;
+        
 
-        .activity-card {
-            background: $color-text;
-            border-radius: 7px;
-            margin-bottom: 40px;
-            overflow-x: auto;
-
-
-            h3 {
-                color: grey;
-                padding: 2rem !important;
-                font-weight: 700;
-                margin: 0;
-                padding: 1rem 0.8rem !important;
-            }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;  
-                
-                thead {
-                    background: #efefef;
-                    text-align: left;
-                }
-
-                th, td {
-                    font-size: 1rem;
-                    padding: 1rem .8rem;
-                    color: $color-dark;
-                }
-
-                td {
-                    font-size: 1rem;
-                }
-
-                tbody tr:nth-child(even) {
-                    background: #f9fafc;
-                }
-
-                .badge {
-                    padding: .5rem 1rem;
-                    border-radius: 20px;
-                    font-weight: 700;
-                    color: $color-text;
-                }
-
-                .td-team {
-                    display: flex;
-                    align-items: center;
-
-                    .img-1, .img-2, .img-3 {
-                        height: 42px;
-                        width: 42px;
-                        border-radius: 50%;
-                        margin-left: -15px;
-                        border: 3px solid #efefef;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                    }
-
-                    .img-1 {
-                        background-image: url(../../assets/person/christina2.jpg);
-                    }
-
-                    .img-2 {
-                        background-image: url(../../assets/person/christina1.jpg);
-                    }
-
-                    .img-3 {
-                        background-image: url(../../assets/person/christina5.jpg);
-                    }
-                }
+        .card_single {
+            background: $color-dark;
+            //border-radius: 7px;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+            padding: 5px 10px;
+            margin-bottom: 1rem;
 
 
-            }
-
-            
-        }
-
-        .summary {
-            margin-right: 1rem;
-            margin-bottom: 40px;
-
-            .summary-card{
-                margin: auto;
-                margin-bottom: 1.5rem;
-                padding-top: .5rem;
-                padding-bottom: .5rem;
-                background: #fff;
-                border-radius: 7px;
-
-                .summary-single {
-                    padding: .5rem 1rem;
-                    display: flex;
-                    align-items: center;
-
-                    span {
-                        font-size: 1.5rem;
-                        color: #777;
-                        padding-right: 1rem;
-                    }
-
-                    h5 {
-                        color: $color-dark;
-                        font-size: 1.1rem;
-                        font-weight: 700;
-                        margin-bottom: 0rem !important;
-                    }
-
-                    small {
-                        font-weight: 700;
-                        color: grey;
-                    }
-                }
-            }
-
-            
-            .meet-card {
-                background: #fff;
-                border-radius: 7px;
-                padding: 1rem;
+            .card_body {
+                padding: 1.3rem 1rem;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                margin: auto;
-                margin-bottom: 40px;
 
-                .meet-flex {
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: .3rem;
-
-                    
-                    .meet-img {
-                        height: 60px;
-                        width: 60px;
-                        border-radius: 50%;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        background-image: url(../../assets/person/christina1.jpg);
-                        margin-right: 0.7rem;
-                    }
-
-                    .meet-info {
-                        h5 {
-                            color: black;
-                            font-weight: 700;
-                            margin: 0;
-                            font-size: 1.1rem;
-                        }
-
-                        small {
-                            color: grey;
-                            font-size: 0.9rem;
-                        }
-                    }
+                span {
+                    font-size: 2.4rem;
+                    //background: $color-text;
+                    padding-right: 1rem;
+                    color: $color-text;
+                    margin-bottom: 15px;
                 }
 
+                h5 {
+                    margin: 0;
+                    color: $color-text;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    font-family: 'Poppins', sans-serif;
+                }
 
-                .text-center {
-                    text-align: center;
-                    margin-top: 15px;
+                h4 {
+                    margin: 0;
+                    color: grey;
+                    font-size: 1.1rem;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
 
-                    button {
-                        background: $color-dark;
+            .card_footer {
+                padding: .2rem 1rem;
+                background: $color-dark;
+
+                a{
+                    color: $color-text;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    text-align: right;
+                    display: block;
+                }
+            }
+        }
+    }
+    // FIN CARDS //
+
+    .recent {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        //background: pink;
+        //display: none;
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-column-gap: 1.5rem;
+
+            .activity-card {
+                background: $color-text;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                overflow-x: auto;
+
+
+                h3 {
+                    color: grey;
+                    padding: 2rem !important;
+                    font-weight: 700;
+                    margin: 0;
+                    padding: 1rem 0.8rem !important;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;  
+                    
+                    thead {
+                        background: #efefef;
+                        text-align: left;
+                    }
+
+                    th, td {
+                        font-size: 1rem;
+                        padding: 1rem .8rem;
+                        color: $color-dark;
+                    }
+
+                    td {
+                        font-size: 1rem;
+                    }
+
+                    tbody tr:nth-child(even) {
+                        background: #f9fafc;
+                    }
+
+                    .badge {
+                        padding: .5rem 1rem;
+                        border-radius: 20px;
+                        font-weight: 700;
                         color: $color-text;
-                        border: 1px solid $color-dark;
-                        border-radius: 4px;
-                        padding: .4rem 1rem;
+                    }
 
+                    .td-team {
                         display: flex;
                         align-items: center;
 
-                        .material-icons {
-                            margin-right: 10px;
+                        .img-1, .img-2, .img-3 {
+                            height: 42px;
+                            width: 42px;
+                            border-radius: 50%;
+                            margin-left: -15px;
+                            border: 3px solid #efefef;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+
+                        .img-1 {
+                            background-image: url(../../assets/person/christina2.jpg);
+                        }
+
+                        .img-2 {
+                            background-image: url(../../assets/person/christina1.jpg);
+                        }
+
+                        .img-3 {
+                            background-image: url(../../assets/person/christina5.jpg);
+                        }
+                    }
+
+
+                }
+
+                
+            }
+
+            .summary {
+                margin-right: 1rem;
+                margin-bottom: 40px;
+
+                .summary-card{
+                    margin: auto;
+                    margin-bottom: 1.5rem;
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    background: #fff;
+                    border-radius: 7px;
+
+                    .summary-single {
+                        padding: .5rem 1rem;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            font-size: 1.5rem;
+                            color: #777;
+                            padding-right: 1rem;
+                        }
+
+                        h5 {
+                            color: $color-dark;
+                            font-size: 1.1rem;
+                            font-weight: 700;
+                            margin-bottom: 0rem !important;
+                        }
+
+                        small {
+                            font-weight: 700;
+                            color: grey;
                         }
                     }
                 }
 
+                
+                .meet-card {
+                    background: #fff;
+                    border-radius: 7px;
+                    padding: 1rem;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: auto;
+                    margin-bottom: 40px;
+
+                    .meet-flex {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: .3rem;
+
+                        
+                        .meet-img {
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-image: url(../../assets/person/christina1.jpg);
+                            margin-right: 0.7rem;
+                        }
+
+                        .meet-info {
+                            h5 {
+                                color: black;
+                                font-weight: 700;
+                                margin: 0;
+                                font-size: 1.1rem;
+                            }
+
+                            small {
+                                color: grey;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+
+
+                    .text-center {
+                        text-align: center;
+                        margin-top: 15px;
+
+                        button {
+                            background: $color-dark;
+                            color: $color-text;
+                            border: 1px solid $color-dark;
+                            border-radius: 4px;
+                            padding: .4rem 1rem;
+
+                            display: flex;
+                            align-items: center;
+
+                            .material-icons {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                }
+                
             }
-            
+
+
         }
-
-
     }
-}
-
 
 }
 // FIN MAIN //

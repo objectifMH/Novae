@@ -5,6 +5,8 @@ import { faFacebook, faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos';
 import { InOutService } from '../services/in-out.service';
+import { ChangeContext, Options, PointerType } from '@angular-slider/ngx-slider';
+
 
 
 @Component({
@@ -19,6 +21,7 @@ export class MainComponent implements OnInit {
   faGithub = faGithub;
   faFacebook = faFacebook;
 
+  // Carroussel 
   customOptions_actus: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -66,6 +69,36 @@ export class MainComponent implements OnInit {
     },
     nav: false
   }
+  // Fin Carroussel
+
+  // Sliders 
+  value: number = 150000;
+  optionsSliderMontant: Options = {
+    floor: 0,
+    ceil: 600000,
+    step: 1000,
+    translate: (value: number): string => {
+      return value+"€";
+    }
+  };
+
+  minValue=15;
+  optionsSliderDuree: Options = {
+    floor: 2,
+    ceil: 30,
+    step: 1,
+    translate: (value: number): string => {
+      return value+"ans";
+    }
+  };
+
+
+  textDuree = '';
+  textMontant = '';
+  textTaux = '0.82';
+  textAssurance = '0.34';
+  mensualite = "0"
+  //Fin Sldiders
 
   
   isIos = false; 
@@ -123,7 +156,6 @@ export class MainComponent implements OnInit {
       document.querySelectorAll(".counter").forEach(counter_element => {
         counter_element.innerHTML = "0"; 
       })
-
     }
   }
 
@@ -187,6 +219,101 @@ export class MainComponent implements OnInit {
       this.errorNom = this.contactForm.controls.nom.status === "VALID" ? false : true;
       this.errorPrenom = this.contactForm.controls.prenom.status === "VALID" ? false : true;
     }
+  }
+
+
+
+  // SLIDERS 
+  logText: string = '';
+  logTextDuree:  string = '';
+
+  // Montant 
+  onUserChangeStart(changeContext: ChangeContext): void {
+    this.logText += `onUserChangeStart(${this.getChangeContextString(changeContext)})\n`;
+  }
+
+  onUserChange(changeContext: ChangeContext): void {
+    this.logText += `onUserChange(${this.getChangeContextString(changeContext)})\n`;
+  }
+
+  onUserChangeEnd(changeContext: ChangeContext): void {
+    this.logText += `onUserChangeEnd(${this.getChangeContextString(changeContext)})\n`;
+    this.textMontant =  changeContext.value.toString();
+    this.getMensualite();
+  }
+
+  getChangeContextString(changeContext: ChangeContext): string {
+    return `{pointerType: ${changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'}, ` +
+           `value: ${changeContext.value}}`;
+  }
+
+  // Durée 
+  onUserChangeStartDuree(changeContext: ChangeContext): void {
+    this.logTextDuree += `onUserChangeStart(${this.getChangeContextString(changeContext)})\n`;
+  }
+
+  onUserChangeDuree(changeContext: ChangeContext): void {
+    this.logTextDuree += `onUserChange(${this.getChangeContextString(changeContext)})\n`;
+    
+   }
+
+  onUserChangeEndDuree(changeContext: ChangeContext): void {
+    this.logTextDuree += `onUserChangeEnd(${this.getChangeContextString(changeContext)})\n`;
+    this.textDuree =  changeContext.value.toString();
+    this.getTaux();
+  }
+
+  getChangeContextStringDuree(changeContext: ChangeContext): string {
+    return `{pointerType: ${changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'}, ` +
+           `value: ${changeContext.value}}`;
+  }
+
+  // Taux 
+  getTaux(){
+    let duree = parseInt(this.textDuree);
+    let taux = 0.61;
+    if (duree < 10) {
+      taux = 0.61;
+    }
+    if ( duree >= 10 && duree <= 11 )
+    {
+      taux = 0.66;
+    }
+    if ( duree >= 12 && duree <= 14 )
+    {
+      taux = 0.75;
+    }
+    if ( duree >= 15 && duree <= 19 )
+    {
+      taux = 0.82;
+    }
+    if ( duree >= 20 && duree <= 24 )
+    {
+      taux = 1.02;
+    }
+    if ( duree >= 25 && duree <= 29 )
+    {
+      taux = 1.28;
+    }
+    if ( duree === 30 )
+    {
+      taux = 2.59;
+    }
+
+    this.textTaux = taux.toString();
+    this.getMensualite();
+
+  }
+  
+  getMensualite() {
+    let montant = parseInt(this.textMontant);
+    let duree = parseInt(this.textDuree);
+    let assurance = parseInt(this.textAssurance);
+    let taux = parseInt(this.textTaux);
+    let mensualite;
+
+    mensualite =  (montant / ( duree * 12 )) ;
+    this.mensualite = Math.round(mensualite).toString();
   }
 
 }

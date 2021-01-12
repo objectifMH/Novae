@@ -306,13 +306,16 @@ export class MainComponent implements OnInit {
   }
   
   getMensualite() {
-    let montant = parseInt(this.textMontant);
-    let duree = parseInt(this.textDuree);
-    let assurance = parseInt(this.textAssurance);
-    let taux = parseInt(this.textTaux);
+    let montant = +this.textMontant;
+    let duree = +this.textDuree;
+    let assurance = +this.textAssurance;
+    let taux = +this.textTaux / 100;
     let mensualite;
+    console.log(montant , duree, taux )
+    let haut = <any>((montant*taux)/12);
+    let bas = Math.pow(1 + (taux / 12), (duree * -12));
 
-    mensualite =  (montant / ( duree * 12 )) ;
+    mensualite = haut /(1 - bas) ;
     this.mensualite = Math.round(mensualite).toString();
   }
 

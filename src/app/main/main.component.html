@@ -131,9 +131,9 @@
         <p>
           Taux d'intérêt : <span>{{textTaux}}%</span>
         </p>
-        <p>
+        <!-- <p>
           Taux d'assurance : <span>{{textAssurance}}%</span>
-        </p>
+        </p> -->
 
       </div>
 
@@ -141,7 +141,9 @@
 
       <div class="simulateur_droit" *ngIf="textMontant !== '' && textDuree !== ''">
         <p>
-          Pour un crédit de <span>{{textMontant}}€</span> sur <span>{{textDuree}}ans</span> avec un taux d'intérêt de <span>{{textTaux}}%</span> et un taux d'assurance de <span>{{textAssurance}}%</span>.
+          Pour un crédit de <span>{{textMontant}}€</span> sur <span>{{textDuree}}ans</span> avec un taux d'intérêt de <span>{{textTaux}}%</span> 
+          <!-- et un taux d'assurance de <span>{{textAssurance}}%</span> -->
+          .
         </p>
         <br>
         <h3>

@@ -104,7 +104,14 @@ main {
 
                 }
     
-                button {
+                .rejoignez {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+
+                .btn_rejoignez {
                     color: $color-text;
                     border-width: 0px;
                     border-color: $color_dark;
@@ -217,7 +224,6 @@ main {
     // FIN MISSIONS
 
     // SIMULATEUR 
-
     .simulateur_container {
         // justify-content: center;
         // flex-direction: row;
@@ -319,7 +325,6 @@ main {
     }
     // FIN CHIFFRES
 
-
     // CABINET
     .cabinet {
         padding: 60px 0 60px 0;
@@ -368,13 +373,12 @@ main {
                     padding: 5px;
                     width: 96%;
                     //box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-                    content:url(../../assets/work.svg) ;
+                    //content:url(../../assets/work.svg) ;
                 }
             }
         }
     }
     // FIN CABINET
-
 
     // CONTACTEZ
     .contactez {
@@ -384,7 +388,7 @@ main {
 
         .contactez_container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             flex-direction: column;
             height: 100%;
@@ -394,7 +398,7 @@ main {
                 color: $color-text;
             }
 
-            button {
+            .btn_rejoignez {
                 color: $color-text;
                 border-width: 0px;
                 border-color: $color_dark;
@@ -403,7 +407,6 @@ main {
                 font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif!important;
                 text-transform: uppercase!important;
                 background-color:  $color_dark;
-                margin-top: 30px;
 
                 padding-top: 14px!important;
                 padding-right: 38px!important;
@@ -448,7 +451,6 @@ main {
                         font-weight: 500;
                         color:grey;
                         text-align: justify;
-
                         font-family: "Poppins", Arial, Tahoma, sans-serif;
 
                         color: grey;
@@ -537,9 +539,7 @@ main {
 
             .news-wrap {
                 width: 100%;
-                //height: 100vh;
                 padding: 30px;
-
 
                 .row {
                     margin-bottom: 40px;
@@ -667,8 +667,8 @@ main {
                          }
          
                          a {
-                             color: #fff;
-                             background: $color_dark;
+                            border: 2px solid $color_dark;
+                            color: $color_dark;
                              padding: 10px 25px;
                              font-size: 14px;
                              font-weight: 300;
@@ -703,7 +703,7 @@ main {
                          .news-grid-txt {
                              a {
                                  text-decoration-line: none;
-                                 color: #fff;
+                                 color: $color-dark;
                                  letter-spacing: 2px;
                                  transition: .5s ;
                                  transform: translateY(-5px);
@@ -828,8 +828,8 @@ main {
                          }
          
                          a {
-                             color: #fff;
-                             background: $color_dark;
+                            border: 2px solid $color_dark;
+                            color: $color_dark;
                              padding: 10px 25px;
                              font-size: 14px;
                              font-weight: 300;
@@ -864,7 +864,7 @@ main {
                          .news-grid-txt {
                              a {
                                  text-decoration-line: none;
-                                 color: #fff;
+                                 color: $color-dark;
                                  letter-spacing: 2px;
                                  transition: .5s ;
                                  transform: translateY(-5px);

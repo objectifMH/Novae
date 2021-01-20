@@ -7,11 +7,11 @@
         <img src="assets/finance.svg" alt="finance" data-aos="fade-right" data-aos-duration="2000" />
         <div class="grid_text" data-aos="fade-left" data-aos-duration="2000">
           <h1>
-            Avec Novae tout est carré, le top en comtpabilité.
+            Avec Novae tout est carré, le top en comptabilité.
           </h1>
-          <button btn>
-            <a [routerLink]="['/login']" fragment="container">Rejoignez-nous</a>
-          </button>
+          <div class="rejoignez">
+            <a [routerLink]="['/login']" fragment="container" class="btn_rejoignez">Rejoignez-nous</a>
+          </div>
         </div>
       </div>
 
@@ -211,7 +211,7 @@
         </p>
       </div>
       <div class="cabinet_img" data-aos="fade-left">
-        <img class="reunion_img" />
+        <img class="reunion_img" src="assets/work.svg" />
       </div>
 
     </div>
@@ -224,10 +224,8 @@
       <h4>
         Des&nbsp;questions sur votre fiscalité ? Une&nbsp;demande de&nbsp;devis !
       </h4>
-      <button btn>
-        <a [routerLink]="['/main']" fragment="contacter"> Contactez-nous
+        <a [routerLink]="['/main']" fragment="contacter" class="btn_rejoignez"> Contactez-nous
         </a>
-      </button>
     </div>
   </div>
   <!-- fin contactez-nous  -->
@@ -769,7 +767,7 @@
     <div class="form container">
       <!-- contact  -->
 
-      <div class="contact-info " data-aos="zoom-out-right" data-aos-duration="800">
+      <div class="contact-info " data-aos="fade-right" data-aos-duration="2000">
 
         <h3 class="titre">Nous contacter </h3>
         <div class="info_container">
@@ -821,7 +819,7 @@
 
       </div>
       <!-- formulaire contact  -->
-      <div class="contact-form" data-aos="zoom-in-left" data-aos-duration="800">
+      <div class="contact-form" data-aos="fade-left" data-aos-duration="2000">
         <form [formGroup]="contactForm">
           <h3 class="titre">Envoyez un message</h3>
           <div class="form-group nom ">

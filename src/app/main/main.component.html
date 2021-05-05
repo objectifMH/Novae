@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="missions_container container">
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="400">
+      <div class="mission animation_delay_500" >
         <div>
           <span class="material-icons">
             calculate
@@ -42,7 +42,7 @@
           Comptabilité
         </h4>
       </div>
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="400">
+      <div class="mission animation_delay_1000" >
         <div>
           <span class="material-icons">
             analytics
@@ -52,7 +52,7 @@
           Audit Financier
         </h4>
       </div>
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="400">
+      <div class="mission animation_delay_1500" >
         <div>
           <span class="material-icons">
             handyman
@@ -63,7 +63,7 @@
         </h4>
 
       </div>
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="600">
+      <div class="mission animation_delay_2000" >
         <div>
           <span class="material-icons">
             account_balance
@@ -74,7 +74,7 @@
         </h4>
 
       </div>
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="600">
+      <div class="mission animation_delay_2500" >
         <div>
           <span class="material-icons">
             receipt_long
@@ -84,7 +84,7 @@
           Rapport Prévisionnel
         </h4>
       </div>
-      <div class="mission" data-aos="zoom-in-up" data-aos-duration="600">
+      <div class="mission animation_delay_3000" >
         <div>
           <span class="material-icons">
             question_answer
@@ -102,7 +102,7 @@
         <h3>Simulateur pret immobilier</h3>
       </div>
     </div>
-    <div class="simulateur_container container">
+    <div class="simulateur_container container" id="simulateur_conteneur">
       <div class="simulateur_gauche">
         <p>
           Montant
@@ -139,15 +139,18 @@
 
 
 
-      <div class="simulateur_droit" *ngIf="textMontant !== '' && textDuree !== ''">
-        <p>
-          Pour un crédit de <span>{{textMontant}}€</span> sur <span>{{textDuree}}ans</span> avec un taux d'intérêt de <span>{{textTaux}}%</span> 
+      <!-- <div class="simulateur_droit" *ngIf="textMontant !== '' && textDuree !== ''"> -->
+        <div  class="simulateur_droit" 
+              [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'"
+        >
+        <p [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">
+          Pour un crédit de <span [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">{{textMontant}}€</span> sur <span [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">{{textDuree}}ans</span> avec un taux d'intérêt de <span>{{textTaux}}%</span> 
           <!-- et un taux d'assurance de <span>{{textAssurance}}%</span> -->
           .
         </p>
-        <br>
-        <h3>
-          Mensualité de <span>{{mensualite}}</span>€/mois
+        <br [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">
+        <h3 [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">
+          Mensualité de <span [ngClass]="textMontant !== '' && textDuree !== '' ? 'simulateur_show' : 'simulateur_hide'">{{mensualite}}</span>€/mois
         </h3>
       </div>
 
@@ -159,7 +162,7 @@
   <!-- fin missions  -->
 
   <!-- chiffres  -->
-  <div class="container-fluid chiffres bg_linear_light" [ngClass]="{'OS':isIos}">
+  <div class="container-fluid chiffres bg_linear_light" [ngClass]="{'OS':isIos}" id="chiffres">
     <div class="chiffres_container container">
       <div class="chiffre">
         <h3>
@@ -219,7 +222,7 @@
   <!-- fin cabinet  -->
 
   <!-- contactez-nous  -->
-  <div class="container contactez">
+  <div class="container contactez" id="contactez-nous">
     <div class="contactez_container">
       <h4>
         Des&nbsp;questions sur votre fiscalité ? Une&nbsp;demande de&nbsp;devis !

@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
         items: 1
       },
       490: {
-        items: 2, 
+        items: 2,
       },
       640: {
         items: 3
@@ -61,7 +61,7 @@ export class MainComponent implements OnInit {
         items: 1
       },
       490: {
-        items: 1, 
+        items: 1,
       },
       940: {
         items: 1
@@ -78,17 +78,17 @@ export class MainComponent implements OnInit {
     ceil: 600000,
     step: 1000,
     translate: (value: number): string => {
-      return value+"€";
+      return value + "€";
     }
   };
 
-  minValue=15;
+  minValue = 15;
   optionsSliderDuree: Options = {
     floor: 2,
     ceil: 30,
     step: 1,
     translate: (value: number): string => {
-      return value+"ans";
+      return value + "ans";
     }
   };
 
@@ -100,17 +100,17 @@ export class MainComponent implements OnInit {
   mensualite = "0"
   //Fin Sldiders
 
-  
-  isIos = false; 
+
+  isIos = false;
 
   errorMail = false;
   errorNom = false;
   errorMessage = false;
   errorPrenom = false;
-  plateforme: string = ""; 
+  plateforme: string = "";
 
   contactForm: FormGroup;
-  
+
   constructor(private fb: FormBuilder, private httpClient: HttpClient, private inout: InOutService) {
     this.contactForm = this.fb.group({
       nom: [''],
@@ -123,39 +123,79 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     AOS.init();
     this.plateforme = this.inout.getPlatform();
-    if (/iP(hone|od|ad)/.test(navigator.platform))
-    {
-      this.isIos = true; 
+    if (/iP(hone|od|ad)/.test(navigator.platform)) {
+      this.isIos = true;
       console.log(this.isIos, navigator.platform);
     }
+
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-    let chiffres = document.querySelector('.chiffres');
 
-    if (window.pageYOffset > (chiffres.clientHeight + 400)) {  
+    // Missions 
+
+    let top = window.pageYOffset + window.innerHeight;
+
+
+    // Apparition au scroll aqui items : 
+
+    let missions_conteneur = document.getElementById('missions');
+    let chiffres_conteneur = document.getElementById('chiffres');
+
+
+    let top_missions = missions_conteneur.offsetTop;
+    let top_chiffres = chiffres_conteneur.offsetTop;
+
+    let mission_items = document.querySelectorAll('.mission');
+
+    (top > top_missions + 200 && top < top_chiffres) ?
+      mission_items.forEach(items => {
+        items.classList.add('glissement_animation');
+      })
+      :
+      mission_items.forEach(items => {
+        items.classList.remove('glissement_animation');
+      })
+
+
+    // Chiffres 
+    // let chiffres = document.querySelector('.chiffres');
+
+    let contactez_nous_conteneur = document.getElementById('contactez-nous');
+    let top_contactez = contactez_nous_conteneur.offsetTop;
+
+    let simulateur_conteneur = document.getElementById('simulateur_conteneur');
+    let top_simulateur = simulateur_conteneur.offsetTop;
+    let height_simulateur = simulateur_conteneur.offsetHeight;
+
+    let debut_affichage = top_simulateur + height_simulateur;
+
+    if ( (window.pageYOffset + height_simulateur)  > debut_affichage && (window.pageYOffset < top_contactez)) {
+      console.log("ok je suis la ");
       document.querySelectorAll(".counter").forEach(counter_element => {
         let count = parseInt(counter_element.getAttribute('data-count'));
 
         let updateCount = setInterval(() => {
           let divContent = parseInt(counter_element.innerHTML);
-          let increaseBy = count / 250 ; 
+          let increaseBy = count / 450;
           let increase = Math.ceil(divContent + increaseBy);
-          if ( divContent < count ) {
-            counter_element.innerHTML = increase.toString(); 
+          if (divContent < count) {
+            counter_element.innerHTML = increase.toString();
           }
           else {
-            counter_element.innerHTML  = count.toString(); 
+            counter_element.innerHTML = count.toString();
             clearInterval(updateCount);
           }
         })
       })
-    } 
+    }
     else {
-      document.querySelectorAll(".counter").forEach(counter_element => {
-        counter_element.innerHTML = "0"; 
-      })
+      if (window.pageYOffset < (top_chiffres)) {
+        document.querySelectorAll(".counter").forEach(counter_element => {
+          counter_element.innerHTML = "0";
+        })
+      }
     }
   }
 
@@ -172,8 +212,8 @@ export class MainComponent implements OnInit {
   onSubmit() {
     if (this.contactForm.valid) {
       console.log(this.contactForm);
-      let message =  this.contactForm.value.message + "\n Envoyé de Novae. ";
-      
+      let message = this.contactForm.value.message + "\n Envoyé de Novae. ";
+
 
       let formData = new FormData();
       formData.append("name", this.contactForm.value.nom);
@@ -203,7 +243,7 @@ export class MainComponent implements OnInit {
           });
 
           let form_inputs = document.querySelectorAll('.form-group');
-          form_inputs.forEach(element => { 
+          form_inputs.forEach(element => {
             element.classList.remove("focus");
           });
 
@@ -225,7 +265,7 @@ export class MainComponent implements OnInit {
 
   // SLIDERS 
   logText: string = '';
-  logTextDuree:  string = '';
+  logTextDuree: string = '';
 
   // Montant 
   onUserChangeStart(changeContext: ChangeContext): void {
@@ -238,13 +278,13 @@ export class MainComponent implements OnInit {
 
   onUserChangeEnd(changeContext: ChangeContext): void {
     this.logText += `onUserChangeEnd(${this.getChangeContextString(changeContext)})\n`;
-    this.textMontant =  changeContext.value.toString();
+    this.textMontant = changeContext.value.toString();
     this.getMensualite();
   }
 
   getChangeContextString(changeContext: ChangeContext): string {
     return `{pointerType: ${changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'}, ` +
-           `value: ${changeContext.value}}`;
+      `value: ${changeContext.value}}`;
   }
 
   // Durée 
@@ -254,49 +294,43 @@ export class MainComponent implements OnInit {
 
   onUserChangeDuree(changeContext: ChangeContext): void {
     this.logTextDuree += `onUserChange(${this.getChangeContextString(changeContext)})\n`;
-    
-   }
+
+  }
 
   onUserChangeEndDuree(changeContext: ChangeContext): void {
     this.logTextDuree += `onUserChangeEnd(${this.getChangeContextString(changeContext)})\n`;
-    this.textDuree =  changeContext.value.toString();
+    this.textDuree = changeContext.value.toString();
     this.getTaux();
   }
 
   getChangeContextStringDuree(changeContext: ChangeContext): string {
     return `{pointerType: ${changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'}, ` +
-           `value: ${changeContext.value}}`;
+      `value: ${changeContext.value}}`;
   }
 
   // Taux 
-  getTaux(){
+  getTaux() {
     let duree = parseInt(this.textDuree);
     let taux = 0.61;
     if (duree < 10) {
       taux = 0.61;
     }
-    if ( duree >= 10 && duree <= 11 )
-    {
+    if (duree >= 10 && duree <= 11) {
       taux = 0.66;
     }
-    if ( duree >= 12 && duree <= 14 )
-    {
+    if (duree >= 12 && duree <= 14) {
       taux = 0.75;
     }
-    if ( duree >= 15 && duree <= 19 )
-    {
+    if (duree >= 15 && duree <= 19) {
       taux = 0.82;
     }
-    if ( duree >= 20 && duree <= 24 )
-    {
+    if (duree >= 20 && duree <= 24) {
       taux = 1.02;
     }
-    if ( duree >= 25 && duree <= 29 )
-    {
+    if (duree >= 25 && duree <= 29) {
       taux = 1.28;
     }
-    if ( duree === 30 )
-    {
+    if (duree === 30) {
       taux = 2.59;
     }
 
@@ -304,18 +338,18 @@ export class MainComponent implements OnInit {
     this.getMensualite();
 
   }
-  
+
   getMensualite() {
     let montant = +this.textMontant;
     let duree = +this.textDuree;
     let assurance = +this.textAssurance;
     let taux = +this.textTaux / 100;
     let mensualite;
-    console.log(montant , duree, taux )
-    let haut = <any>((montant*taux)/12);
+    console.log(montant, duree, taux)
+    let haut = <any>((montant * taux) / 12);
     let bas = Math.pow(1 + (taux / 12), (duree * -12));
 
-    mensualite = haut /(1 - bas) ;
+    mensualite = haut / (1 - bas);
     this.mensualite = Math.round(mensualite).toString();
   }
 

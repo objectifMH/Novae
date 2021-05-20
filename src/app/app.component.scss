@@ -1395,6 +1395,8 @@ footer {
     align-items: flex-start; 
     position: relative;
 
+
+
     .footer_item {
         display: flex;
         flex-direction: column;
@@ -1409,6 +1411,12 @@ footer {
             span {
                 color: $color-text;
             }
+
+            
+            img {
+                width: 115px;
+                }
+                
         }
 
         p {
@@ -1539,11 +1547,7 @@ footer {
     z-index: 1000;
     flex-direction: row;
 
-    .logo {
-        img {
-            width: 115px;
-        }
-    }
+    
 
     .footer_item {
         margin: 12px;

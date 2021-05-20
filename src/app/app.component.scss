@@ -69,6 +69,10 @@ header {
 
             img {
                 width: 65px;
+                
+                background-color: white;
+                border-radius: 17px;
+                padding: 2px 8px;
             }
 
             span {
@@ -248,7 +252,7 @@ header {
 
      .nav_menu_mobile.show {
         height: 100vh;
-        margin-top: 89px;
+        margin-top: 86px;
         transform: translateY(0);
      }
     // FIN Menu mobile
@@ -1415,6 +1419,10 @@ footer {
             
             img {
                 width: 115px;
+                background-color: white;
+                border-radius: 17px;
+                padding: 2px 8px;
+
                 }
                 
         }

@@ -1,69 +1,73 @@
 <!-- header  -->
-<header *ngIf="!isProfil">
-  <div class="logo">
+<header *ngIf="!isProfil" >
+  <div class="container container_header">
+    <div class="logo">
     
-    <a [routerLink]="['/main']" fragment="debut" (click)="closeMenu()">
-      NO<span>V</span>AE
-    </a>
-  </div>
-  <div class="centre">
-    <ul class="liste_menu">
-      <li>
-        <a [routerLink]="['/main']" fragment="missions">NOS MISSIONS</a>
-      </li>
-      <li>
-        <a [routerLink]="['/main']" fragment="cabinet">NOTRE CABINET</a>
-      </li>
-      <li>
-        <a [routerLink]="['/main']" fragment="solution">NOS SOLUTIONS</a>
-      </li>
-      <li>
-        <a [routerLink]="['/main']" fragment="actus">NOS ACTUS</a>
-      </li>
-      <li>
-        <a [routerLink]="['/main']" fragment="contacter">NOUS CONTACTER</a>
-      </li>
-      
-    </ul>
-
-  </div>
-  <div class="droite">
-    <div class="connecter">
-      <a [routerLink]="['/login']" fragment="" *ngIf="!isAuthenticated">SE CONNECTER</a>
-      <a [routerLink]="['/profil/main']" fragment="" *ngIf="isAuthenticated" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
+      <a [routerLink]="['/main']" fragment="debut" (click)="closeMenu()">
+        <!-- NO<span>V</span>AE -->
+        <img src="assets/logo/novae_b.svg" >
+      </a>
     </div>
-    <div class="menu">
-      <span class="material-icons icon_menu"
-        [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
-        (click)="getShowMenu()">
-      </span>
+    <div class="centre">
+      <ul class="liste_menu">
+        <li>
+          <a [routerLink]="['/main']" fragment="missions">MISSIONS</a>
+        </li>
+        <li>
+          <a [routerLink]="['/main']" fragment="cabinet">CABINET</a>
+        </li>
+        <li>
+          <a [routerLink]="['/main']" fragment="solution">SOLUTIONS</a>
+        </li>
+        <li>
+          <a [routerLink]="['/main']" fragment="actus">ACTUS</a>
+        </li>
+        <li>
+          <a [routerLink]="['/main']" fragment="contacter">CONTACTER</a>
+        </li>
+        
+      </ul>
+  
     </div>
-  </div>
-  <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
-
-    <ul class="liste_menu container ">
-      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
-        <a [routerLink]="['/main']" fragment="missions" (click)="getShowMenu()">NOS MISSIONS</a>
-      </li>
-      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
-        <a [routerLink]="['/main']" fragment="cabinet" (click)="getShowMenu()">NOTRE CABINET</a>
-      </li>
-      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
-        <a [routerLink]="['/main']" fragment="solution" (click)="getShowMenu()">NOS SOLUTIONS</a>
-      </li>
-      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
-        <a [routerLink]="['/main']" fragment="actus" (click)="getShowMenu()">NOS ACTUS</a>
-      </li>
-      <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
-        <a [routerLink]="['/main']" fragment="contacter" (click)="getShowMenu()">NOUS CONTACTER</a>
-      </li>
-    </ul>
-    <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
-      <a [routerLink]="['/login']" fragment="connection" *ngIf="!isAuthenticated" (click)="getShowMenu()">SE CONNECTER</a>
-      <a [routerLink]="['/profil/main']" *ngIf="isAuthenticated" (click)="getShowMenu()" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
+    <div class="droite">
+      <div class="connecter">
+        <a [routerLink]="['/login']" fragment="" *ngIf="!isAuthenticated">SE CONNECTER</a>
+        <a [routerLink]="['/profil/main']" fragment="" *ngIf="isAuthenticated" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
+      </div>
+      <div class="menu">
+        <span class="material-icons icon_menu"
+          [ngClass]="{'show': isShowMenu, 'hide':!isShowMenu, 'rotate_av': isRotateMenu , 'rotate_ar': !isRotateMenu}"
+          (click)="getShowMenu()">
+        </span>
+      </div>
+    </div>
+    <div class="nav_menu_mobile fade " [ngClass]="{'show': isShowMenu, 'fade':!isShowMenu}">
+  
+      <ul class="liste_menu container ">
+        <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
+          <a [routerLink]="['/main']" fragment="missions" (click)="getShowMenu()">MISSIONS</a>
+        </li>
+        <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
+          <a [routerLink]="['/main']" fragment="cabinet" (click)="getShowMenu()">CABINET</a>
+        </li>
+        <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
+          <a [routerLink]="['/main']" fragment="solution" (click)="getShowMenu()">SOLUTIONS</a>
+        </li>
+        <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
+          <a [routerLink]="['/main']" fragment="actus" (click)="getShowMenu()">ACTUS</a>
+        </li>
+        <li [ngClass]="{'animate_box': isShowMenu && firstMenuNav === 1}">
+          <a [routerLink]="['/main']" fragment="contacter" (click)="getShowMenu()">CONTACTER</a>
+        </li>
+      </ul>
+      <div class="connecter" [ngClass]="{'animate_slide': isShowMenu && firstMenuNav === 1}">
+        <a [routerLink]="['/login']" fragment="connection" *ngIf="!isAuthenticated" (click)="getShowMenu()">SE CONNECTER</a>
+        <a [routerLink]="['/profil/main']" *ngIf="isAuthenticated" (click)="getShowMenu()" class="bg_transparent">@{{profilAuthenticated.pseudo}}</a>
+      </div>
+  
     </div>
 
-  </div>
+  </div>   
 </header>
 <!-- fin header  -->
 
@@ -76,10 +80,15 @@
   <div class="container footer">
     <div class="footer_item">
       <div class="logo">
-        NO<span>V</span>AE
+        <!-- NO<span>V</span>AE -->
+        <!-- <img src="assets/logo/novae_b.svg" > -->
+        <a [routerLink]="['/main']" fragment="debut" (click)="closeMenu()">
+          <!-- NO<span>V</span>AE -->
+          <img src="assets/logo/novae_b.svg" >
+        </a>
       </div>
       <p>
-        Tout est carré!
+        <!-- Tout est carré! -->
       </p>
     </div>
     <div class="footer_item">

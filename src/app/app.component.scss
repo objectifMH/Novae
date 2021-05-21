@@ -20,7 +20,13 @@
 header.opacity_true {
     opacity: 1 ;
     background: linear-gradient(150deg, $color_dark 0%, $color_light 100%);
-    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);       
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75); 
+    
+    img {
+        width: 65px !important;
+        transition: 0.6s ease-in-out;
+    }
+
     .nav_menu {
         a, .search_material, li{     
             color: $color_text !important;
@@ -1804,7 +1810,8 @@ footer {
             a {
         
                 img {
-                    width: 85px !important;
+                    width: 85px;
+                    transition: 0.6s ease-in-out;
                 }
             }
         }
@@ -1884,7 +1891,7 @@ footer {
                     border-width: 0px;
                     border-color: $color_dark;
                     letter-spacing: 1px;
-                    font-size: 1em;
+                    font-size: .8em;
                     font-weight: bold;
                     font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif!important;
                     text-transform: uppercase!important;
